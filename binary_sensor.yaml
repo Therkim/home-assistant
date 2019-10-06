@@ -1,6 +1,6 @@
 platform: mqtt
 name: "My Computer - Connected"
-state_topic: "iotlink/workgroup/ODIN/lwt"
+state_topic: "iotlink/workgroup/odin/lwt"
 value_template: "{{ value }}"
 payload_on: "ON"
 payload_off: "OFF"
