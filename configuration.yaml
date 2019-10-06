@@ -15,7 +15,7 @@ device_tracker: !include device_tracker.yaml
 discovery:
 frontend: !include themes.yaml
 group: !include groups.yaml
-hacs: !include hacs.yaml
+#hacs: !include hacs.yaml
 history: !include history.yaml
 homeassistant: !include homeassistant.yaml
 http: !include http.yaml
