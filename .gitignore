@@ -20,6 +20,7 @@ home-assistant.log
 home-assistant_v2.db
 www/
 www/*
+*.json
 *.conf
 *.jpg
 *.html
