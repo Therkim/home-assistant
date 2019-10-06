@@ -1,7 +1,6 @@
 auth:
 alexa_media: !include alexa_media.yaml
 automation: !include automations.yaml
-binary_sensor: !include binary_sensor.yaml
 breaking_changes:
 camera: !include camera.yaml
 cast: !include cast.yaml
