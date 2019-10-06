@@ -1,0 +1,12 @@
+  - name: 'livingroom_normal'
+    entities:
+      light.living_room:
+        state: on
+        brightness: 200
+        color_temp: 365
+  - name: 'livingroom_dim'
+    entities:
+      light.living_room:
+        state: on
+        brightness: 25
+        color_temp: 445

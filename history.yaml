@@ -1,0 +1,46 @@
+  exclude:
+    domains:
+      - automation
+    entities:
+      - sensor.time
+      - sensor.desk_motion_sensor
+      - sensor.living_room_door_motion_sensor
+      - sensor.media_center_motion_motion_sensor
+      - sensor.stair_motion_motion_sensor
+      - sensor.office_motion_motion_sensor
+      - sensor.desk_temperature
+      - sensor.hall_temperature
+      - sensor.living_room_temperature
+      - sensor.media_center_temperature
+      - sensor.stair_temperature
+      - sensor.office_temperature
+      - sensor.temperature_sdb
+      - sensor.temperature_sdc
+      - sensor.temperature_sdd
+      - group.mediaplayers
+      - group.hue
+      - sensor.hue_group_office_switch
+      - sensor.living_room_switch
+      - sensor.bedroom_switch
+      - light.hall
+      - light.hall_1
+      - light.hall_2
+      - light.office
+      - light.hue_ambiance_spot_1
+      - light.hue_ambiance_spot_2
+      - light.hue_ambiance_spot_3
+      - light.hue_ambiance_spot_4
+      - light.hue_ambiance_spot_5
+      - light.hue_ambiance_spot_6
+      - light.hue_ambiance_spot_7
+      - light.hue_ambiance_spot_8
+      - light.hue_group_bedroom
+      - light.hue_group_office
+      - light.kitchen
+      - light.living_room
+      - switch.playstation4
+      - switch.ace_combat_5
+      - switch.ace_combat_7
+      - switch.spiderman
+      - switch.red_dead
+

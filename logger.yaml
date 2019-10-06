@@ -1,0 +1,6 @@
+logs:
+  homeassistant.components.http.ban: warning
+  homeassistant.components.media_player.plex: error
+  homeassistant.components.sensor.synologydsm: error
+  homeassistant.components.media_player.cast: error
+  homeassistant.components.recorder: error

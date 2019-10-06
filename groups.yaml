@@ -1,0 +1,5 @@
+lamp_group:
+  name: Lamp
+  entities:
+    - switch.lamp_1
+    - switch.lamp_2

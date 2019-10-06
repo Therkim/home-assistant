@@ -1,0 +1,12 @@
+- platform: group
+  name: Living Room
+  entities:
+    - cover.living_room1
+    - cover.living_room2
+- platform: group
+  name: Blinds
+  entities:
+    - cover.living_room1
+    - cover.living_room2
+    - cover.bedroom1
+    - cover.office1

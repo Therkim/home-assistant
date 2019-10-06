@@ -1,0 +1,86 @@
+alexa:
+  filter:
+    include_domains:
+      - media_player
+      - switch
+      - group
+      - cover
+    exclude_entities:
+      - switch.lamp_1
+      - switch.lamp_2
+      - switch.server
+      - switch.synology
+      - switch.network
+      - switch.freezer
+      - switch.fridge
+      - switch.hoover_2
+      - group.all_automations
+      - group.all_devices
+      - group.all_covers
+      - group.all_scripts
+      - group.all_switches
+      - group.all_lights
+      - cover.living_room1
+      - cover.living_room2
+      - light.hue_ambiance_spot_1
+      - light.hue_ambiance_spot_2
+      - light.hue_ambiance_spot_3
+      - light.hue_ambiance_spot_4
+      - light.hue_ambiance_spot_5
+      - light.hue_ambiance_spot_6
+      - light.hue_ambiance_spot_7
+      - light.hue_ambiance_spot_8
+      - light.hall_1
+      - light.hall_2
+      - media_player.bedroom
+      - media_player.office
+      - media_player.living_room
+      - media_player.thomas_s_2nd_echo
+      - media_player.playstation_4
+      - switch.foscam_aircon
+      - switch.foscam_motion
+      - switch.foscam_center
+      - switch.foscam_zoom_in
+      - switch.foscam_zoom_out
+      - switch.ac_mode
+      - switch.ac_speed
+      - switch.ac_temp_down
+      - switch.ac_temp_up
+      - switch.mosquitto
+      - switch.somactrl
+      - switch.plexmediaserver
+      - switch.office_shuffle_switch
+      - switch.office_repeat_switch
+      - switch.bedroom_do_not_disturb_switch
+      - switch.bedroom_repeat_switch
+      - switch.office_do_not_disturb_switch
+      - switch.living_room_repeat_switch
+      - switch.bedroom_shuffle_switch
+      - switch.living_room_do_not_disturb_switch
+      - switch.living_room_shuffle_switch
+#google_actions:
+#  filter:
+#    include_domains:
+#      - media_player
+#      - switch
+#      - group
+#      - cover
+#    exclude_domains:
+#      - cover
+#    exclude_entities:
+#      - switch.lamp_1
+#      - switch.lamp_2
+#      - switch.server
+#      - switch.synology
+#      - switch.network
+#      - switch.freezer
+#      - switch.fridge
+#      - group.all_automations
+#      - group.all_devices
+#      - group.all_covers
+#      - group.all_scripts
+#      - group.all_switches
+#      - group.all_lights
+#      - cover.living_room1
+#      - cover.living_room2
+

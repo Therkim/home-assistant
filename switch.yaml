@@ -1,0 +1,147 @@
+  - platform: circadian_lighting
+    lights_ct:
+      - light.living_room
+    lights_brightness:
+      - light.office
+      - light.bedroom
+  - platform: template
+    switches:
+      ps4_switch:
+        turn_on:
+          service: media_player.turn_on
+          entity_id: media_player.playstation_4
+        turn_off:
+          service: media_player.turn_off
+          entity_id: media_player.playstation_4
+        value_template: "{{ not is_state('media_player.playstation_4', 'off')}}"
+      tv_home:
+        turn_on:
+          service: script.turn_on
+          entity_id: script.1550954428710
+        turn_off:
+        value_template: false
+      tv_pause:
+        turn_on:
+          service: script.turn_on
+          entity_id: script.1550957003616
+        turn_off:
+        value_template: false
+      plex:
+        turn_on:
+          service: script.turn_on
+          entity_id: script.1551994862431
+        turn_off:
+        value_template: false
+      starwars:
+        turn_on:
+          service: script.turn_on
+          entity_id: script.1551994862432  
+        turn_off:
+        value_template: false
+      spiderman:
+        turn_on:
+          service: script.turn_on
+          entity_id: script.1551994781025
+        turn_off:
+        value_template: false
+      warships:
+        turn_on:
+          service: script.turn_on
+          entity_id: script.1558816411178
+        turn_off:
+        value_template: false
+      tv_play:
+        turn_on:
+          service: script.turn_on
+          entity_id: script.1550957023625
+        turn_off:
+        value_template: false
+      playstation:
+        turn_on:
+          service: script.turn_on
+          entity_id: script.1551993902126
+        turn_off:
+          service: script.turn_on
+          entity_id: script.1551993925425
+        value_template: false
+      netflix:
+        turn_on:
+          service: script.turn_on
+          entity_id: script.1546800827638
+        turn_off:
+          service: script.turn_on
+          entity_id: script.1550954428710
+        value_template: "{{ is_state_attr('media_player.tv', 'media_series_title', 'App opened')}}"
+  - platform: command_line
+    switches:
+      aircon:
+        command_on: 'irsend send_once aircon power'
+        command_off: 'irsend send_once aircon power'
+        friendly_name: 'Air Con'
+        command_state: 'true'
+        value_template: "{{ states('sensor.tp_link_acplug_watts') | int > 50 }}"
+      ac_temp_down:
+        command_on: 'irsend send_once aircon temp_down'
+        command_off: 'irsend send_once aircon temp_down'
+        friendly_name: 'AC Temp Down'
+        command_state: 'true'
+        value_template: '{{ value == "1" }}'
+      ac_temp_up:
+        command_on: 'irsend send_once aircon temp_up'
+        command_off: 'irsend send_once aircon temp_up'
+        friendly_name: 'AC Temp Up'
+        command_state: 'true'
+        value_template: '{{ value == "1" }}'
+      ac_mode:
+        command_on: 'irsend send_once aircon mode'
+        command_off: 'irsend send_once aircon mode'
+        friendly_name: 'AC Mode'
+        command_state: 'true'
+        value_template: '{{ value == "1" }}'
+      ac_speed:
+        command_on: 'irsend send_once aircon speed'
+        command_off: 'irsend send_once aircon speed'
+        friendly_name: 'AC Speed'
+        command_state: 'true'
+        value_template: '{{ value == "1" }}'
+      ac_swing:
+        command_on: 'irsend send_once aircon swing'
+        command_off: 'irsend send_once aircon swing'
+        friendly_name: 'AC Swing'
+        command_state: 'true'
+        value_template: '{{ value == "1" }}'
+      foscam_living_room:
+        command_on: !secret foscam_turn_on_start_motion
+        command_off: !secret foscam_turn_off_stop_motion
+        command_state: !secret foscam_motion_state
+        friendly_name: "Camera"
+        value_template: '{{ value == "1" }}'
+      foscam_aircon:
+        command_on: !secret foscam_aircon
+      foscam_center:
+        command_on: !secret foscam_center
+      foscam_zoom_in:
+        command_on: !secret foscam_zoom_in
+      foscam_zoom_out:
+        command_on: !secret foscam_zoom_out
+      foscam_motion:
+        command_on: !secret foscam_motion_on
+        command_off: !secret foscam_motion_off
+        command_state: !secret foscam_motion_state
+        value_template: '{{ value == "1" }}'
+      somactrl:
+        command_on: 'sudo systemctl start somactrl.service'
+        command_off: 'sudo systemctl stop somactrl.service'
+      plexmediaserver:
+        command_on: 'sudo systemctl start plexmediaserver'
+        command_off: 'sudo systemctl stop plexmediaserver'
+      mosquitto:
+        command_on: 'sudo systemctl start mosquitto.service'
+        command_off: 'sudo systemctl stop mosquitto.service'
+      hoover:
+        command_on: '/home/homeassistant/botvac_clean.sh'
+        command_off: '/home/homeassistant/botvac_stop.sh'
+        command_state: 'true'
+        value_template: "{{ states('sensor.hoover_dock_w') | int < 20 }}"
+      hoover_beep:
+        command_on: '/home/homeassistant/botvac_beep.sh'

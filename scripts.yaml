@@ -1,0 +1,110 @@
+'1546800827638':
+  alias: Netflix TV
+  sequence:
+  - data:
+      entity_id: media_player.tv
+      media_content_id: Netflix
+      media_content_type: tvshow
+    service: media_player.play_media
+'1546801013523':
+  alias: Plex TV
+  sequence:
+  - data:
+      entity_id: media_player.tv
+      media_content_id: opa-plex-5
+      media_content_type: tvshow
+    service: media_player.play_media
+'1550954428710':
+  alias: Home TV
+  sequence:
+  - data:
+      entity_id: media_player.tv
+      media_content_id: Home
+      media_content_type: tvshow
+    service: media_player.play_media
+'1550957003616':
+  alias: Pause TV
+  sequence:
+  - data:
+      entity_id: media_player.tv
+      media_content_id: Pause
+      media_content_type: tvshow
+    service: media_player.play_media
+'1550957023625':
+  alias: Play TV
+  sequence:
+  - data:
+      entity_id: media_player.tv
+      media_content_id: Play
+      media_content_type: tvshow
+    service: media_player.play_media
+'1551993902126':
+  alias: Turn on PS4
+  sequence:
+  - data:
+      entity_id: media_player.playstation_4
+    service: media_player.turn_on
+'1551993925425':
+  alias: Turn off PS4
+  sequence:
+  - data:
+      entity_id: media_player.playstation_4
+    service: media_player.turn_off
+'1551994740076':
+  alias: Star Wars
+  sequence:
+  - data:
+      entity_id: media_player.playstation_4
+      source: STAR WARS™ Battlefront™ II
+    service: media_player.select_source
+'1551994781025':
+  alias: Spiderman
+  sequence:
+  - data:
+      entity_id: media_player.playstation_4
+    service: media_player.turn_on
+  - wait_template: '{{ is_state(''media_player.playstation_4'', ''idle'') }}'
+  - data:
+      entity_id: media_player.playstation_4
+      source: Marvel's Spider-Man
+    service: media_player.select_source
+'1551994823401':
+  alias: Ace Combat 5
+  sequence:
+  - data:
+      entity_id: media_player.playstation_4
+    service: media_player.turn_on
+  - wait_template: '{{ is_state(''media_player.playstation_4'', ''idle'') }}'
+  - data:
+      entity_id: media_player.playstation_4
+      media_content_id: CUSA13351
+    service: media_player.play_media
+'1551994862431':
+  alias: Plex PS4
+  sequence:
+  - data:
+      entity_id: media_player.playstation_4
+    service: media_player.turn_on
+  - wait_template: '{{ is_state(''media_player.playstation_4'', ''idle'') }}'
+  - data:
+      entity_id: media_player.playstation_4
+      source: Plex
+    service: media_player.select_source
+'1551994862432':
+  alias: Star Wars + Turn On PS4
+  sequence:
+  - data:
+      entity_id: media_player.playstation_4
+    service: media_player.turn_on
+  - wait_template: '{{ is_state(''media_player.playstation_4'', ''idle'') }}'
+  - data:
+      entity_id: media_player.playstation_4
+      source: STAR WARS™ Battlefront™ II
+    service: media_player.select_source
+'1558816411178':
+  alias: World of Warships
+  sequence:
+  - data:
+      entity_id: media_player.playstation_4
+      source: 'WORLD OF WARSHIPS: LEGENDS'
+    service: media_player.select_source

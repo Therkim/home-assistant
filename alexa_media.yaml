@@ -1,0 +1,7 @@
+accounts:
+  - email: !secret amazon_e
+    password: !secret amazon_p
+    url: amazon.co.uk
+    exclude_devices:
+      - "This Device"
+      - "Thomas's Alexa Apps"

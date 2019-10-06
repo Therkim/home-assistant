@@ -1,0 +1,233 @@
+  - platform: mqtt
+    state_topic: "ha/doorbell/notify/battery"
+    value_template: '{{value_json.batt}}'
+    unit_of_measurement: "Volts"
+    name: "Doorbell (HA/Doorbell)"
+  - platform: mqtt
+    state_topic: 'sensor/bed/left'
+    name: 'bed_left_value'
+  - platform: mqtt
+    state_topic: 'sensor/bed/right'
+    name: 'bed_right_value'
+  - platform: cert_expiry
+    host: !secret cert_expiry_host
+  - platform: uptime
+  - platform: version
+    source: pypi
+  - platform: version
+    source: local
+  - platform: plex
+    host: !secret plex_host
+    port: !secret plex_port
+    ssl: false
+    token: !secret plex_token
+  - platform: time_date
+    display_options:
+      - 'time'
+  - platform: darksky
+    api_key: !secret darksky_api
+    forecast: 0
+    monitored_conditions:
+      - temperature_high
+  - platform: systemmonitor
+    resources:
+      - type: processor_use
+      - type: disk_use_percent
+        arg: /
+      - type: memory_use_percent
+      - type: ipv4_address
+        arg: enp2s0
+  - platform: command_line
+    name: CPU Temp
+    command: "cat /sys/class/thermal/thermal_zone0/temp"
+    unit_of_measurement: "°C"
+    value_template: '{{ value | multiply(0.001) | round(0) }}'
+  - platform: command_line
+    name: Plex Status
+    command: systemctl show home-assistant@homeassistant | awk -F= '/^SubState=/ {print $2}'
+  - platform: command_line
+    name: Nginx Status
+    command: systemctl show nginx | awk -F= '/^SubState=/ {print $2}'
+    scan_interval: 20
+  - platform: command_line
+    name: MQTT Status
+    command: systemctl show mosquitto | awk -F= '/^SubState=/ {print $2}'
+    scan_interval: 20
+  - platform: command_line
+    name: SomaCtrl Status
+    command: systemctl show somactrl | awk -F= '/^SubState=/ {print $2}'
+    scan_interval: 20
+  - platform: template
+    sensors:
+      tom_bed_sensor:
+        value_template: "{% if states('sensor.bed_right_value')| float > 20 %}Occupied{% else %}empty{% endif %}"
+        icon_template: "{% if states('sensor.bed_right_value')| float > 20 %}mdi:hotel{% else %}mdi:bed-empty{% endif %}"
+      hannah_bed_sensor:
+        value_template: "{% if states('sensor.bed_left_value')| float > 20 %}Occupied{% else %}empty{% endif %}"
+        icon_template: "{% if states('sensor.bed_left_value')| float > 20 %}mdi:hotel{% else %}mdi:bed-empty{% endif %}"
+      unifi_gateway_wan_cpu:
+        friendly_name: 'USG CPU'
+        value_template: "{{ states.sensor.unifi_gateway_wan.attributes['gw_system-stats']['cpu'] }}"
+        unit_of_measurement: "%"
+        entity_id: sensor.time
+      unifi_gateway_wan_mem:
+        friendly_name: 'USG Memory'
+        value_template: "{{ states.sensor.unifi_gateway_wan.attributes['gw_system-stats']['mem'] }}"
+        unit_of_measurement: "%"
+        entity_id: sensor.time
+      unifi_gateway_wan_ip:
+        friendly_name: 'USG WAN IP'
+        value_template: '{{ states.sensor.unifi_gateway_wan.attributes.wan_ip }}'
+        entity_id: sensor.time
+      average_indoor_temp:
+        value_template: '{{ ((((states.sensor.desk_temperature_2.state | float) +
+        (states.sensor.hall_temperature_2.state | float) +
+        (states.sensor.living_room_door_temperature.state | float) +
+        (states.sensor.media_center_temperature_2.state | float) +
+        (states.sensor.office_temperature_2.state | float)) /5) | round(1)) }}'
+        friendly_name: 'Average Temp'
+        unit_of_measurement: '°C'
+      total_power_cost:
+        value_template: "{{ ((states('sensor.total_electricity_cost') | float) + (states('sensor.total_gas_cost') | float) + (0.1911 + 0.16)) | round(2) }}"
+        friendly_name: 'Total cost (£)'
+        unit_of_measurement: '£'
+        entity_id: sensor.time
+      total_electricity_cost:
+        value_template: '{{ ((states.sensor.electricity_yesterday.state | float * 1 / 100 *15.03)) | round(2) }}'
+        friendly_name: 'Total electricity cost (£)'
+        unit_of_measurement: '£'
+        entity_id: sensor.electricity_yesterday
+      total_gas_cost:
+        value_template: '{{ ((states.sensor.gas_yesterday.state | float * 1 / 100 *3.60)) | round(2) }}'
+        friendly_name: 'Total gas cost (£)'
+        unit_of_measurement: '£'
+        entity_id: sensor.gas_yesterday
+      tp_link_computer_kwh:
+        value_template: '{{ states.switch.computer.attributes["today_energy_kwh"] | replace(" kwh", "") | float }}'
+        unit_of_measurement: 'kWh'
+      tp_link_bed_kwh:
+        value_template: '{{ states.switch.bed.attributes["today_energy_kwh"] | replace(" kwh", "") | float }}'
+        unit_of_measurement: 'kWh'
+      tp_link_freezer_kwh:
+        value_template: '{{ states.switch.freezer.attributes["today_energy_kwh"] | replace(" kwh", "") | float }}'
+        unit_of_measurement: 'kWh'
+      tp_link_freezer_watts:
+        value_template: '{{ states.switch.freezer.attributes["current_power_w"] | replace(" W", "") | float }}'
+        unit_of_measurement: 'W'
+      tp_link_fridge_kwh:
+        value_template: '{{ states.switch.fridge.attributes["today_energy_kwh"] | replace(" kwh", "") | float }}'
+        unit_of_measurement: 'kWh'
+      tp_link_fridge_watts:
+        value_template: '{{ states.switch.fridge.attributes["current_power_w"] | replace(" W", "") | float }}'
+        unit_of_measurement: 'W'
+      tp_link_lamp_1_kwh:
+        value_template: '{{ states.switch.lamp_1.attributes["today_energy_kwh"] | replace(" kwh", "") | float }}'
+        unit_of_measurement: 'kWh'
+      tp_link_lamp_2_kwh:
+        value_template: '{{ states.switch.lamp_2.attributes["today_energy_kwh"] | replace(" kwh", "") | float }}'
+        unit_of_measurement: 'kWh'
+      tp_link_up2_kwh:
+        value_template: '{{ states.switch.server.attributes["today_energy_kwh"] | replace(" kwh", "") | float }}'
+        unit_of_measurement: 'kWh'
+      tp_link_tumble_dryer_kwh:
+        value_template: '{{ states.switch.tumble_dryer.attributes["today_energy_kwh"] | replace(" kwh", "") | float }}'
+        unit_of_measurement: 'kWh'
+      tp_link_acplug_watts:
+        value_template: '{{ states.switch.ac_plug.attributes["current_power_w"] | replace(" W", "") | float }}'
+        unit_of_measurement: 'W'
+      tp_link_acplug_amps:
+        value_template: '{{ states.switch.ac_plug.attributes["current_a"] | replace(" a", "") | float }}'
+        unit_of_measurement: 'Amps'
+      tp_link_acplug_kwh:
+        value_template: '{{ states.switch.ac_plug.attributes["today_energy_kwh"] | replace(" kwh", "") | float }}'
+        unit_of_measurement: 'kWh'
+      tp_link_media_kwh:
+        value_template: '{{ states.switch.media_center.attributes["today_energy_kwh"] | replace(" kwh", "") | float }}'
+        unit_of_measurement: 'kWh'
+      tp_link_synology_ds418j_kwh:
+        value_template: '{{ states.switch.synology.attributes["today_energy_kwh"] | replace(" kwh", "") | float }}'
+        unit_of_measurement: 'kWh'
+      tp_link_network_power_kwh:
+        value_template: '{{ states.switch.network.attributes["today_energy_kwh"] | replace(" kwh", "") | float }}'
+        unit_of_measurement: 'kWh'
+      media_center_temperature:
+        friendly_name: 'Media Center Temperature'
+        value_template: '{{state_attr("binary_sensor.media_motion_center", "temperature")}}'
+        unit_of_measurement: °C
+      living_room_temperature:
+        friendly_name: 'Living Room Temperature'
+        value_template: '{{state_attr("binary_sensor.living_room_motion_door", "temperature")}}'
+        unit_of_measurement: °C
+      desk_temperature:
+        friendly_name: 'Desk Temperature'
+        value_template: '{{state_attr("binary_sensor.motion_desk", "temperature")}}'
+        unit_of_measurement: °C
+      hall_temperature:
+        friendly_name: 'Hall Temperature'
+        value_template: '{{state_attr("binary_sensor.motion_hall", "temperature")}}'
+        unit_of_measurement: °C
+      office_temperature:
+        friendly_name: 'Office Temperature'
+        value_template: '{{state_attr("binary_sensor.motion_office", "temperature")}}'
+        unit_of_measurement: °C
+      stair_temperature:
+        friendly_name: 'Stair Temperature'
+        value_template: '{{state_attr("binary_sensor.motion_stair", "temperature")}}'
+        unit_of_measurement: °C
+      gas_yesterday:
+        friendly_name: Gas Use Yesterday
+        icon_template: mdi:fire
+        unit_of_measurement: 'kWh'
+        value_template: '{{ (state_attr("sensor.octopus_gas", "results") | map(attribute="consumption") | sum ) | round(3)}}'
+      electricity_yesterday:
+        friendly_name: Electricity Use Yesterday
+        icon_template: mdi:flash
+        unit_of_measurement: 'kWh'
+        value_template: '{{ (state_attr("sensor.octopus_elec", "results") | map(attribute="consumption") | sum ) | round(3)}}'
+      hoover_dock_w:
+        value_template: '{{ states.switch.hoover_2.attributes["current_power_w"] | replace(" W", "") | float }}'
+        unit_of_measurement: 'W'
+      hoover_dock_a:
+        value_template: '{{ states.switch.hoover_2.attributes["current_a"] | float }}'
+        unit_of_measurement: 'A'
+  - platform: synologydsm
+    host: !secret synologydsm_host
+    port: !secret synologydsm_port
+    ssl: false
+    name: Synology NAS
+    username: !secret synology_username
+    password: !secret synology_password
+    monitored_conditions:
+      - cpu_total_load
+      - memory_real_usage
+      - volume_status
+      - volume_percentage_used
+      - disk_temp
+      - disk_smart_status
+  - platform: unifigateway
+    host: !secret unifi_controller
+    port: !secret unifigateway_port
+    verify_ssl: false
+    username: !secret usg_username
+    password: !secret usg_password
+    scan_interval: 60
+    monitored_conditions:
+      - www
+      - wlan
+      - alerts
+      - firmware
+      - vpn
+      - lan
+      - wan
+  - platform: command_line
+    name: octopus_gas
+    value_template: '{{ value_json.count }}'
+    json_attributes: 
+      - results
+    command: !secret octopus_gas
+  - platform: command_line
+    name: octopus_elec
+    value_template: '{{ value_json.count }}'
+    json_attributes: 
+      - results
+    command: !secret octopus_elec
