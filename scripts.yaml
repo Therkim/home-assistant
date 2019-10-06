@@ -111,16 +111,14 @@
 '1570397479539':
   alias: Turn off Laptop
   sequence:
-  - data:
+    - service: mqtt.publish
       data:
         payload: ''
-        'topic:': iotlink/workgroup/odin/commands/shutdown
-    service: mqtt.publish
+        topic: iotlink/workgroup/odin/commands/shutdown
 '1570397587184':
   alias: Lock Laptop
   sequence:
-  - data:
+    - service: mqtt.publish 
       data:
         payload: ''
-        'topic:': iotlink/workgroup/odin/commands/lock
-    service: mqtt.publish
+        topic: iotlink/workgroup/odin/commands/lock
