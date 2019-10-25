@@ -1,0 +1,4 @@
+meeting_status:
+  name: Meeting
+  initial: off
+  icon: mdi:cisco-webex
