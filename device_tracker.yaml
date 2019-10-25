@@ -5,6 +5,3 @@
     consider_home: 1800
     new_device_defaults:
       track_new_devices: false
-  - platform: nmap_tracker
-    hosts: 
-      - !secret work_laptop_address
