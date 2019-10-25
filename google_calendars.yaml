@@ -1,4 +1,4 @@
-cal_id: !secret cal_id
+- cal_id: !secret cal_id
   entities:
   - device_id: Meetings
     name: Meetings
