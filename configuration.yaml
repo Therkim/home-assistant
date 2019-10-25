@@ -14,7 +14,7 @@ config:
 device_tracker: !include device_tracker.yaml
 discovery:
 frontend: !include themes.yaml
-google: !include google.ayml
+google: !include google.yaml
 group: !include groups.yaml
 #hacs: !include hacs.yaml
 history: !include history.yaml
