@@ -2,3 +2,7 @@ meeting_status:
   name: Meeting
   initial: off
   icon: mdi:cisco-webex
+office_blind_automation:
+  name: Office Blind Automation
+  initial: on
+  icon: mdi:blinds
