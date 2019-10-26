@@ -132,14 +132,18 @@
       somactrl:
         command_on: 'sudo systemctl start somactrl.service'
         command_off: 'sudo systemctl stop somactrl.service'
+        command_state: 'systemctl status somlctrl | grep "running"'
+        value_template: value_template: '{{ value == "running" }}'
       plexmediaserver:
         command_on: 'sudo systemctl start plexmediaserver'
         command_off: 'sudo systemctl stop plexmediaserver'
-        command_state: 'systemctl show somactrl | grep "Running"'
-        value_template: value_template: '{{ value == "Running" }}'
+        command_state: 'systemctl status plexmediaserver | grep "running"'
+        value_template: value_template: '{{ value == "running" }}'
       mosquitto:
         command_on: 'sudo systemctl start mosquitto.service'
         command_off: 'sudo systemctl stop mosquitto.service'
+        command_state: 'systemctl status mosquitto.service | grep "running"'
+        value_template: value_template: '{{ value == "running" }}'
       hoover:
         command_on: '/home/homeassistant/botvac_clean.sh'
         command_off: '/home/homeassistant/botvac_stop.sh'
