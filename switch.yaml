@@ -135,6 +135,8 @@
       plexmediaserver:
         command_on: 'sudo systemctl start plexmediaserver'
         command_off: 'sudo systemctl stop plexmediaserver'
+        command_state: 'systemctl show somactrl | grep "Running"'
+        value_template: value_template: '{{ value == "Running" }}'
       mosquitto:
         command_on: 'sudo systemctl start mosquitto.service'
         command_off: 'sudo systemctl stop mosquitto.service'
