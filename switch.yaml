@@ -132,7 +132,7 @@
       somactrl:
         command_on: 'sudo systemctl start somactrl.service'
         command_off: 'sudo systemctl stop somactrl.service'
-        command_state: 'systemctl status somlctrl | grep -c -w "running"'
+        command_state: 'systemctl status somactrl | grep -c -w "running"'
         value_template: '{{ value == "1" }}'
       plexmediaserver:
         command_on: 'sudo systemctl start plexmediaserver'
