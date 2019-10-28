@@ -59,6 +59,9 @@
     scan_interval: 20
   - platform: template
     sensors:
+      meeting:
+        value_template: {{ states.input_boolean.meeting_status }}
+        friendly_name: "Meeting Status"
       tom_bed_sensor:
         value_template: "{% if states('sensor.bed_right_value')| float > 25 %}Occupied{% else %}empty{% endif %}"
         icon_template: "{% if states('sensor.bed_right_value')| float > 25 %}mdi:hotel{% else %}mdi:bed-empty{% endif %}"
