@@ -60,7 +60,7 @@
   - platform: template
     sensors:
       meeting:
-        value_template: {{ states.input_boolean.meeting_status }}
+        value_template: {{{ 'open' if is_state('input_boolean.meeting_status', 'on') else 'off' }}
         friendly_name: "Meeting Status"
       tom_bed_sensor:
         value_template: "{% if states('sensor.bed_right_value')| float > 25 %}Occupied{% else %}empty{% endif %}"
