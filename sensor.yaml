@@ -191,12 +191,12 @@
         friendly_name: Gas Use Yesterday
         icon_template: mdi:fire
         unit_of_measurement: 'kWh'
-        value_template: '{{ (state_attr("sensor.octopus_gas", "results") | map(attribute="consumption") | sum ) | round(3)}}'
+        value_template: '{{ (state_attr("sensor.gas", "results") | map(attribute="consumption") | sum ) | round(3)}}'
       electricity_yesterday:
         friendly_name: Electricity Use Yesterday
         icon_template: mdi:flash
         unit_of_measurement: 'kWh'
-        value_template: '{{ (state_attr("sensor.octopus_elec", "results") | map(attribute="consumption") | sum ) | round(3)}}'
+        value_template: '{{ (state_attr("sensor.electricity", "results") | map(attribute="consumption") | sum ) | round(3)}}'
       hoover_dock_w:
         value_template: '{{ states.switch.hoover_2.attributes["current_power_w"] | replace(" W", "") | float }}'
         unit_of_measurement: 'W'
