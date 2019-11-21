@@ -5,6 +5,7 @@ before_install:
   - mv travis_secrets.yaml secrets.yaml
   - sudo apt-get install -y libudev-dev
 install:
+  - pip3 install av==6.1.2
   - pip3 install homeassistant
 script:
   - hass -c . --script check_config
