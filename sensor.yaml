@@ -106,15 +106,15 @@
         unit_of_measurement: '£'
         entity_id: sensor.time
       total_electricity_cost:
-        value_template: '{{ ((states.sensor.electricity_yesterday.state | float * 1 / 100 *15.03)) | round(2) }}'
+        value_template: '{{ ((states.sensor.electricity.state | float * 1 / 100 *15.03)) | round(2) }}'
         friendly_name: 'Total electricity cost (£)'
         unit_of_measurement: '£'
-        entity_id: sensor.electricity_yesterday
+        entity_id: sensor.electricity
       total_gas_cost:
-        value_template: '{{ ((states.sensor.gas_yesterday.state | float * 1 / 100 *3.60)) | round(2) }}'
+        value_template: '{{ ((states.sensor.gas.state | float * 1 / 100 *3.60)) | round(2) }}'
         friendly_name: 'Total gas cost (£)'
         unit_of_measurement: '£'
-        entity_id: sensor.gas_yesterday
+        entity_id: sensor.gas
       tp_link_computer_kwh:
         value_template: '{{ states.switch.computer.attributes["today_energy_kwh"] | replace(" kwh", "") | float }}'
         unit_of_measurement: 'kWh'
@@ -187,16 +187,6 @@
         friendly_name: 'Stair Temperature'
         value_template: '{{state_attr("binary_sensor.motion_stair", "temperature")}}'
         unit_of_measurement: °C
-      gas_yesterday:
-        friendly_name: Gas Use Yesterday
-        icon_template: mdi:fire
-        unit_of_measurement: 'kWh'
-        value_template: '{{ (state_attr("sensor.gas", "results") | map(attribute="consumption") | sum ) | round(3)}}'
-      electricity_yesterday:
-        friendly_name: Electricity Use Yesterday
-        icon_template: mdi:flash
-        unit_of_measurement: 'kWh'
-        value_template: '{{ (state_attr("sensor.electricity", "results") | map(attribute="consumption") | sum ) | round(3)}}'
       hoover_dock_w:
         value_template: '{{ states.switch.hoover_2.attributes["current_power_w"] | replace(" W", "") | float }}'
         unit_of_measurement: 'W'
