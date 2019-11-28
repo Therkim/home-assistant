@@ -8,7 +8,6 @@ cast: !include cast.yaml
 circadian_lighting:
   min_colortemp: 1500
   max_colortemp: 5000
-  min_brightness: 15
 cover: !include cover.yaml
 cloud: !include cloud.yaml
 config:
