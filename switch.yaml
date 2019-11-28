@@ -4,6 +4,7 @@
     lights_brightness:
       - light.office
       - light.bedroom
+    min_brightness: 15
   - platform: template
     switches:
       ps4_switch:
