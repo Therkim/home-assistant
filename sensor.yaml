@@ -1,6 +1,3 @@
-  - platform: filesize
-    file_paths:
-      - ./home-assistant_v2.db
   - platform: mqtt
     state_topic: "ha/doorbell/notify/battery"
     value_template: '{{value_json.batt}}'
