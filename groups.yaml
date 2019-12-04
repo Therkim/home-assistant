@@ -3,3 +3,8 @@ lamp_group:
   entities:
     - switch.lamp_1
     - switch.lamp_2
+christmas_lights:
+  name: "Christmas Lights"
+  entities:
+    - switch.tree
+    - switch.stair_lights
