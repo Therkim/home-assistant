@@ -8,3 +8,4 @@ christmas_lights:
   entities:
     - switch.tree
     - switch.stair_lights
+    - switch.window_lights
