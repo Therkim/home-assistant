@@ -34,6 +34,7 @@ scene: !include scene.yaml
 script: !include scripts.yaml
 sensor: !include sensor.yaml
 shell_command: !include shell_command.yaml
+soma: !include soma.yaml
 sun:
 switch: !include switch.yaml
 system_health:
