@@ -176,13 +176,12 @@
       hall_battery:
         friendly_name: 'Hall Battery'
         value_template: '{{state_attr("binary_sensor.hall_motion", "battery_level")}}'
-        unit_of_measurement: °C
       office_battery:
         friendly_name: 'Office Battery'
         value_template: '{{state_attr("binary_sensor.office_motion", "battery_level")}}'
       stair_battery:
         friendly_name: 'Stair Battery'
-        value_template: '{{state_attr("binary_sensor.motion_stair", "battery_level")}}'
+        value_template: '{{state_attr("binary_sensor.stair_motion", "battery_level")}}'
       hoover_dock_w:
         value_template: '{{ states.switch.hoover_2.attributes["current_power_w"] | replace(" W", "") | float }}'
         unit_of_measurement: 'W'
