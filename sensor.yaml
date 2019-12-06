@@ -166,28 +166,46 @@
         unit_of_measurement: 'kWh'
       media_center_temperature:
         friendly_name: 'Media Center Temperature'
-        value_template: '{{state_attr("binary_sensor.media_motion_center", "temperature")}}'
+        value_template: '{{state_attr("binary_sensor.media_center_motion", "temperature")}}'
         unit_of_measurement: °C
+      media_center_temperature:
+        friendly_name: 'Media Center Battery'
+        value_template: '{{state_attr("binary_sensor.media_center_motion", "battery_level")}}'
       living_room_temperature:
         friendly_name: 'Living Room Temperature'
-        value_template: '{{state_attr("binary_sensor.living_room_motion_door", "temperature")}}'
+        value_template: '{{state_attr("binary_sensor.living_room_door_motion", "temperature")}}'
         unit_of_measurement: °C
+      living_room_temperature:
+        friendly_name: 'Living Room Battery'
+        value_template: '{{state_attr("binary_sensor.living_room_door_motion", "battery_level")}}'
       desk_temperature:
         friendly_name: 'Desk Temperature'
-        value_template: '{{state_attr("binary_sensor.motion_desk", "temperature")}}'
+        value_template: '{{state_attr("binary_sensor.desk_motion", "temperature")}}'
         unit_of_measurement: °C
+      desk_battery:
+        friendly_name: 'Desk Battery'
+        value_template: '{{state_attr("binary_sensor.desk_motion", "battery_level")}}'
       hall_temperature:
         friendly_name: 'Hall Temperature'
-        value_template: '{{state_attr("binary_sensor.motion_hall", "temperature")}}'
+        value_template: '{{state_attr("binary_sensor.hall_motion", "temperature")}}'
         unit_of_measurement: °C
+      hall_battery:
+        friendly_name: 'Hall Battery'
+        value_template: '{{state_attr("binary_sensor.hall_motion", "battery_level")}}'
       office_temperature:
         friendly_name: 'Office Temperature'
-        value_template: '{{state_attr("binary_sensor.motion_office", "temperature")}}'
+        value_template: '{{state_attr("sensor.office_motion", "temperature")}}'
         unit_of_measurement: °C
+      office_battery:
+        friendly_name: 'Office Battery'
+        value_template: '{{state_attr("binary_sensor.office_motion", "battery_level")}}'
       stair_temperature:
         friendly_name: 'Stair Temperature'
         value_template: '{{state_attr("binary_sensor.motion_stair", "temperature")}}'
         unit_of_measurement: °C
+      stair_temperature:
+        friendly_name: 'Stair Battery'
+        value_template: '{{state_attr("binary_sensor.motion_stair", "battery_level")}}'
       hoover_dock_w:
         value_template: '{{ states.switch.hoover_2.attributes["current_power_w"] | replace(" W", "") | float }}'
         unit_of_measurement: 'W'
