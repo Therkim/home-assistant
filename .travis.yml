@@ -3,8 +3,7 @@ python:
   - "3.7.3"
 before_install:
   - mv travis_secrets.yaml secrets.yaml
-#  - sudo apt-get install -y python-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev
-  - sudo apt-get install -y python-dev pkg-config libavcodec libavdevice libavformat libavresample libavutil libpostproc libswresample libswscale libva
+  - sudo apt-get install -y python-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev
   - pip3 install --upgrade pip
   - pip3 install setuptools
   - wget https://www.ffmpeg.org/releases/ffmpeg-3.2.14.tar.gz
