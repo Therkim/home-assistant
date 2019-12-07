@@ -35,4 +35,3 @@ shell_command: !include shell_command.yaml
 sun:
 switch: !include switch.yaml
 system_health:
-
