@@ -6,9 +6,11 @@ before_install:
   - sudo apt-get install -y python-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev
   - pip3 install --upgrade pip
   - pip3 install setuptools
-  - wget https://www.ffmpeg.org/releases/ffmpeg-3.2.14.tar.gz
-  - tar -zxvf ffmpeg-3.2.14.tar.gz
-  - cd ffmpeg-3.2.14 && ./configure --disable-yasm && make && sudo make install
+  - wget http://ftp.us.debian.org/debian/pool/main/f/ffmpeg/ffmpeg_3.2.14-1~deb9u1_amd64.deb
+  - dpkg -i ./fmpeg_3.2.14-1~deb9u1_amd64.deb
+#  - wget https://www.ffmpeg.org/releases/ffmpeg-3.2.14.tar.gz
+#  - tar -zxvf ffmpeg-3.2.14.tar.gz
+#  - cd ffmpeg-3.2.14 && ./configure --disable-yasm && make && sudo make install
 install:
   - pip3 install homeassistant
 script:
