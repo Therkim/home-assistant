@@ -29,6 +29,11 @@
     forecast: 0
     monitored_conditions:
       - temperature_high
+  - platform: darksky
+    api_key: !secret darksky_api
+    forecast: -1
+    monitored_conditions:
+      - temperature_high
   - platform: systemmonitor
     resources:
       - type: processor_use
