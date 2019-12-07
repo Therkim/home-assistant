@@ -29,11 +29,11 @@
     forecast: 0
     monitored_conditions:
       - temperature_high
-  - platform: darksky
-    api_key: !secret darksky_api
-    forecast: -1
-    monitored_conditions:
-      - temperature_high
+  - platform: sql
+    queries:
+      - name: "Yesterday Max Temp"
+        query: "SELECT * FROM states WHERE entity_id = 'sensor.dark_sky_daytime_high_temperature_0d' ORDER BY ABS(strftime('%s', created) - strftime('%s', datetime('now'), '-1 day')) LIMIT 1;"
+        column: 'state'
   - platform: systemmonitor
     resources:
       - type: processor_use
