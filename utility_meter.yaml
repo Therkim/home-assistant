@@ -1,6 +1,0 @@
-daily_gas:
-  source: sensor.gas
-  cycle: daily
-daily_electricity:
-  source: sensor.electricity
-  cycle: daily
