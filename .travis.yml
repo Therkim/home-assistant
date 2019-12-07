@@ -3,7 +3,7 @@ python:
   - "3.7.3"
 before_install:
   - mv travis_secrets.yaml secrets.yaml
-  - rm -f ./packages/stream.yaml
+  - pip3 install av==6.1.2
 install:
   - pip3 install homeassistant
 script:
