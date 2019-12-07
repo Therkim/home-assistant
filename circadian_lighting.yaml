@@ -1,0 +1,4 @@
+  min_colortemp: 1500
+  max_colortemp: 5000
+  sunset_offset: -00:45:00
+  
