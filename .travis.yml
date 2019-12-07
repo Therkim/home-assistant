@@ -3,7 +3,7 @@ python:
   - "3.7.3"
 before_install:
   - mv travis_secrets.yaml secrets.yaml
-  - sudo apt-get install -y libudev-dev ffmpeg
+  - rm -f ./packages/stream.yaml
 install:
   - pip3 install av
   - pip3 install homeassistant
