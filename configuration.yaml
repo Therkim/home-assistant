@@ -5,9 +5,7 @@ binary_sensor: !include binary_sensor.yaml
 breaking_changes:
 camera: !include camera.yaml
 cast: !include cast.yaml
-circadian_lighting:
-  min_colortemp: 1500
-  max_colortemp: 5000
+circadian_lighting: !include circadian_lighting.yaml
 cover: !include cover.yaml
 cloud: !include cloud.yaml
 config:
