@@ -3,7 +3,7 @@ python:
   - "3.7.3"
 before_install:
   - mv travis_secrets.yaml secrets.yaml
-  - sudo apt-get install -y python-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev ffmpeg=ffmpeg=7:4.1.4-1~deb10u1
+  - sudo apt-get install -y python-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev ffmpeg=7:4.1.4-1~deb10u1
 install:
   - pip3 install homeassistant
 script:
