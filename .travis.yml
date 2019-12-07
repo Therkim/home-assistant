@@ -4,7 +4,7 @@ python:
 before_install:
   - mv travis_secrets.yaml secrets.yaml
 #  - sudo apt-get install -y python-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev
-  - sudo apt-get install -y python-dev pkg-config
+  - sudo apt-get install -y python-dev pkg-config libavcodec57 libavdevice57 libavformat57 libavresample3 libavutil55 libpostproc54 libswresample2 libswscale4 libva1
   - pip3 install --upgrade pip
   - pip3 install setuptools
   - wget http://ftp.us.debian.org/debian/pool/main/f/ffmpeg/ffmpeg_3.2.14-1~deb9u1_amd64.deb
