@@ -8,7 +8,7 @@ before_install:
   - pip3 install setuptools
   - wget https://www.ffmpeg.org/releases/ffmpeg-3.2.14.tar.gz
   - tar -zxvf ffmpeg-3.2.14.tar.gz
-  - cd ffmpeg-3.2.14 && ./configure --disable-yasm && make && sudo make install && cd ~
+  - cd ffmpeg-3.2.14 && ./configure --disable-yasm && make && sudo make install && cd ..
 install:
   - pip3 install homeassistant
 script:
