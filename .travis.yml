@@ -3,9 +3,12 @@ python:
   - "3.7.3"
 before_install:
   - mv travis_secrets.yaml secrets.yaml
-  - sudo apt-get install -y python-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev ffmpeg
+  - sudo apt-get install -y python-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev
   - pip3 install --upgrade pip
   - pip3 install setuptools
+  - wget https://www.ffmpeg.org/releases/ffmpeg-3.2.14.tar.gz
+  - tar -zxvf ffmpeg-3.2.14.tar.gz
+  - cd ffmpeg-3.2.14 && ./configure --disable-yasm && make && sudo make install
 install:
   - pip3 install homeassistant
 script:
