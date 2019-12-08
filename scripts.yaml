@@ -108,3 +108,17 @@
       entity_id: media_player.playstation_4
       source: 'WORLD OF WARSHIPS: LEGENDS'
     service: media_player.select_source
+'1570397479539':
+  alias: Turn off Laptop
+  sequence:
+    - service: mqtt.publish
+      data:
+        payload: ''
+        topic: iotlink/workgroup/odin/commands/shutdown
+'1570397587184':
+  alias: Lock Laptop
+  sequence:
+    - service: mqtt.publish 
+      data:
+        payload: ''
+        topic: iotlink/workgroup/odin/commands/lock

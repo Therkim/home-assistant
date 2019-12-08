@@ -2,7 +2,7 @@
     state_topic: "ha/doorbell/notify/battery"
     value_template: '{{value_json.batt}}'
     unit_of_measurement: "Volts"
-    name: "Doorbell (HA/Doorbell)"
+    name: "Doorbell Voltage"
   - platform: mqtt
     state_topic: 'sensor/bed/left'
     name: 'bed_left_value'
@@ -29,6 +29,14 @@
     forecast: 0
     monitored_conditions:
       - temperature_high
+  - platform: sql
+    queries:
+      - name: "Yesterday Max Temp"
+        query: "SELECT * FROM states WHERE entity_id = 'sensor.dark_sky_daytime_high_temperature_0d' ORDER BY ABS(strftime('%s', created) - strftime('%s', datetime('now'), '-1 day')) LIMIT 1;"
+        column: 'state'
+      - name: "Yesterday Energy Cost"
+        query: "SELECT * FROM states WHERE entity_id = 'sensor.total_power_cost' ORDER BY ABS(strftime('%s', created) - strftime('%s', datetime('now') )) LIMIT 1;"
+        column: 'state'
   - platform: systemmonitor
     resources:
       - type: processor_use
@@ -57,11 +65,24 @@
     name: SomaCtrl Status
     command: systemctl show somactrl | awk -F= '/^SubState=/ {print $2}'
     scan_interval: 20
+  - platform: command_line
+    name: gas
+    unit_of_measurement: 'm3'
+    scan_interval: 600
+    command: 'sh /home/homeassistant/gas.sh'
+  - platform: command_line
+    name: electricity
+    unit_of_measurement: 'kWh'
+    scan_interval: 600
+    command: 'sh /home/homeassistant/electricity.sh'
   - platform: template
     sensors:
+      meeting:
+        value_template: "{{ is_state('input_boolean.meeting_status', 'on') }}"
+        friendly_name: "Meeting Status"
       tom_bed_sensor:
-        value_template: "{% if states('sensor.bed_right_value')| float > 20 %}Occupied{% else %}empty{% endif %}"
-        icon_template: "{% if states('sensor.bed_right_value')| float > 20 %}mdi:hotel{% else %}mdi:bed-empty{% endif %}"
+        value_template: "{% if states('sensor.bed_right_value')| float > 25 %}Occupied{% else %}empty{% endif %}"
+        icon_template: "{% if states('sensor.bed_right_value')| float > 25 %}mdi:hotel{% else %}mdi:bed-empty{% endif %}"
       hannah_bed_sensor:
         value_template: "{% if states('sensor.bed_left_value')| float > 20 %}Occupied{% else %}empty{% endif %}"
         icon_template: "{% if states('sensor.bed_left_value')| float > 20 %}mdi:hotel{% else %}mdi:bed-empty{% endif %}"
@@ -93,15 +114,16 @@
         unit_of_measurement: '£'
         entity_id: sensor.time
       total_electricity_cost:
-        value_template: '{{ ((states.sensor.electricity_yesterday.state | float * 1 / 100 *15.03)) | round(2) }}'
+        value_template: '{{ ((states.sensor.electricity.state | float * 1 / 100 *15.03)) | round(2) }}'
         friendly_name: 'Total electricity cost (£)'
         unit_of_measurement: '£'
-        entity_id: sensor.electricity_yesterday
+        entity_id: sensor.electricity
       total_gas_cost:
-        value_template: '{{ ((states.sensor.gas_yesterday.state | float * 1 / 100 *3.60)) | round(2) }}'
+#       value_template: '{{ ((states.sensor.gas.state | float * 1 / 100 *3.60)) | round(2) }}'
+        value_template: '{{ ((states.sensor.gas.state | float * 11.36 * 1 / 100 *3.60)) | round(2) }}'
         friendly_name: 'Total gas cost (£)'
         unit_of_measurement: '£'
-        entity_id: sensor.gas_yesterday
+        entity_id: sensor.gas
       tp_link_computer_kwh:
         value_template: '{{ states.switch.computer.attributes["today_energy_kwh"] | replace(" kwh", "") | float }}'
         unit_of_measurement: 'kWh'
@@ -150,40 +172,30 @@
       tp_link_network_power_kwh:
         value_template: '{{ states.switch.network.attributes["today_energy_kwh"] | replace(" kwh", "") | float }}'
         unit_of_measurement: 'kWh'
-      media_center_temperature:
-        friendly_name: 'Media Center Temperature'
-        value_template: '{{state_attr("binary_sensor.media_motion_center", "temperature")}}'
-        unit_of_measurement: °C
-      living_room_temperature:
-        friendly_name: 'Living Room Temperature'
-        value_template: '{{state_attr("binary_sensor.living_room_motion_door", "temperature")}}'
-        unit_of_measurement: °C
-      desk_temperature:
-        friendly_name: 'Desk Temperature'
-        value_template: '{{state_attr("binary_sensor.motion_desk", "temperature")}}'
-        unit_of_measurement: °C
-      hall_temperature:
-        friendly_name: 'Hall Temperature'
-        value_template: '{{state_attr("binary_sensor.motion_hall", "temperature")}}'
-        unit_of_measurement: °C
-      office_temperature:
-        friendly_name: 'Office Temperature'
-        value_template: '{{state_attr("binary_sensor.motion_office", "temperature")}}'
-        unit_of_measurement: °C
-      stair_temperature:
-        friendly_name: 'Stair Temperature'
-        value_template: '{{state_attr("binary_sensor.motion_stair", "temperature")}}'
-        unit_of_measurement: °C
-      gas_yesterday:
-        friendly_name: Gas Use Yesterday
-        icon_template: mdi:fire
-        unit_of_measurement: 'kWh'
-        value_template: '{{ (state_attr("sensor.octopus_gas", "results") | map(attribute="consumption") | sum ) | round(3)}}'
-      electricity_yesterday:
-        friendly_name: Electricity Use Yesterday
-        icon_template: mdi:flash
-        unit_of_measurement: 'kWh'
-        value_template: '{{ (state_attr("sensor.octopus_elec", "results") | map(attribute="consumption") | sum ) | round(3)}}'
+      media_center_battery:
+        friendly_name: 'Media Center Battery'
+        value_template: '{{state_attr("binary_sensor.media_center_motion", "battery_level")}}'
+        unit_of_measurement: '%'
+      living_room_battery:
+        friendly_name: 'Living Room Battery'
+        value_template: '{{state_attr("binary_sensor.living_room_door_motion", "battery_level")}}'
+        unit_of_measurement: '%'
+      desk_battery:
+        friendly_name: 'Desk Battery'
+        value_template: '{{state_attr("binary_sensor.desk_motion", "battery_level")}}'
+        unit_of_measurement: '%'
+      hall_battery:
+        friendly_name: 'Hall Battery'
+        value_template: '{{state_attr("binary_sensor.hall_motion", "battery_level")}}'
+        unit_of_measurement: '%'
+      office_battery:
+        friendly_name: 'Office Battery'
+        value_template: '{{state_attr("binary_sensor.office_motion", "battery_level")}}'
+        unit_of_measurement: '%'
+      stair_battery:
+        friendly_name: 'Stair Battery'
+        value_template: '{{state_attr("binary_sensor.stair_motion", "battery_level")}}'
+        unit_of_measurement: '%'
       hoover_dock_w:
         value_template: '{{ states.switch.hoover_2.attributes["current_power_w"] | replace(" W", "") | float }}'
         unit_of_measurement: 'W'

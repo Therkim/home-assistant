@@ -4,6 +4,7 @@
     lights_brightness:
       - light.office
       - light.bedroom
+    min_brightness: 30
   - platform: template
     switches:
       ps4_switch:
@@ -13,7 +14,7 @@
         turn_off:
           service: media_player.turn_off
           entity_id: media_player.playstation_4
-        value_template: "{{ not is_state('media_player.playstation_4', 'off')}}"
+        value_template: "{{ not is_state('media_player.playstation_4', 'standby')}}"
       tv_home:
         turn_on:
           service: script.turn_on
@@ -132,12 +133,23 @@
       somactrl:
         command_on: 'sudo systemctl start somactrl.service'
         command_off: 'sudo systemctl stop somactrl.service'
+        command_state: 'systemctl status somactrl | grep -c -w "running"'
+        value_template: '{{ value == "1" }}'
       plexmediaserver:
         command_on: 'sudo systemctl start plexmediaserver'
         command_off: 'sudo systemctl stop plexmediaserver'
+        command_state: 'systemctl status plexmediaserver | grep -c -w "running"'
+        value_template: '{{ value == "1" }}'
       mosquitto:
         command_on: 'sudo systemctl start mosquitto.service'
         command_off: 'sudo systemctl stop mosquitto.service'
+        command_state: 'systemctl status mosquitto.service | grep -c -w "running"'
+        value_template: '{{ value == "1" }}'
+      nginx:
+        command_on: 'sudo systemctl start nginx.service'
+        command_off: 'sudo systemctl stop nginx.service'
+        command_state: 'systemctl status nginx.service | grep -c -w "running"'
+        value_template: '{{ value == "1" }}'  
       hoover:
         command_on: '/home/homeassistant/botvac_clean.sh'
         command_off: '/home/homeassistant/botvac_stop.sh'

@@ -5,24 +5,24 @@ binary_sensor: !include binary_sensor.yaml
 breaking_changes:
 camera: !include camera.yaml
 cast: !include cast.yaml
-circadian_lighting:
-  min_colortemp: 1500
-  max_colortemp: 5000
+circadian_lighting: !include circadian_lighting.yaml
 cover: !include cover.yaml
 cloud: !include cloud.yaml
 config:
 device_tracker: !include device_tracker.yaml
 discovery:
 frontend: !include themes.yaml
+google: !include google.yaml
 group: !include groups.yaml
-hacs: !include hacs.yaml
+#hacs: !include hacs.yaml
 history: !include history.yaml
 homeassistant: !include homeassistant.yaml
 http: !include http.yaml
-input_number: !include input_number.yaml
+input_boolean: !include input_boolean.yaml
 logbook:
 logger: !include logger.yaml
 media_player: !include media_player.yaml
+mobile_app:
 nest: !include nest.yaml
 notify: !include notify.yaml
 person:
