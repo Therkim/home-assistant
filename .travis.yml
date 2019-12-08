@@ -30,7 +30,7 @@ addons:
             - libswresample-dev
             - libswscale-dev
             - pkg-config
-            homebrew:
+    homebrew:
         # Unfortunately, as of writing, we need to update Homebrew.
         update: true
         packages:
