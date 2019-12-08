@@ -30,8 +30,11 @@ addons:
             - libavformat
             - libavutil
             - libswresample
-            - libswscale            
-    homebrew:
+            - libswscale
+            - pkg-config
+            - python-dev
+            - python3-dev
+            homebrew:
         # Unfortunately, as of writing, we need to update Homebrew.
         update: true
         packages:
