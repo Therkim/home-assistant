@@ -22,8 +22,15 @@ addons:
             - wget
             - yasm
             - zlib1g-dev
+            - libavcodec
+            - libavdevice
             - libavdevice-dev
+            - libavfilter
             - libavfilter-dev
+            - libavformat
+            - libavutil
+            - libswresample
+            - libswscale            
     homebrew:
         # Unfortunately, as of writing, we need to update Homebrew.
         update: true
