@@ -22,6 +22,8 @@ addons:
             - wget
             - yasm
             - zlib1g-dev
+            - libavdevice-dev
+            - libavfilter-dev
     homebrew:
         # Unfortunately, as of writing, we need to update Homebrew.
         update: true
