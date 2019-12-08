@@ -1,12 +1,33 @@
 language: python
 python:
-  - "3.6"
+  - "3.7.3"
+addons:
+    apt:
+        packages:
+            # See: https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu
+            - autoconf
+            - automake
+            - build-essential
+            - cmake
+            - libass-dev
+            - libfreetype6-dev
+            - libjpeg-dev
+            - libtheora-dev
+            - libtool
+            - libvorbis-dev
+            - libx264-dev
+            - mercurial
+            - pkg-config
+            - texinfo
+            - wget
+            - yasm
+            - zlib1g-dev
 before_install:
   - mv travis_secrets.yaml secrets.yaml
 #  - sudo apt-get install -y python-dev pkg-config libavutil-dev libswscale-dev libavresample-dev libavfilter-dev
-  - sudo apt-get install -y python-dev python3-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev libjpeg-dev libfreetype6-dev zlib1g-dev yasm ffmpeg
-  - pip3 install --upgrade pip
-  - pip install setuptools
+#  - sudo apt-get install -y python-dev python3-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev libjpeg-dev libfreetype6-dev zlib1g-dev yasm ffmpeg
+#  - pip3 install --upgrade pip
+#  - pip install setuptools
 #  - wget https://www.ffmpeg.org/releases/ffmpeg-3.2.14.tar.gz
 #  - tar -zxvf ffmpeg-3.2.14.tar.gz
 #  - cd ffmpeg-3.2.14 && ./configure --disable-yasm && make && sudo make install && cd ..
