@@ -30,6 +30,7 @@ addons:
             - libswresample-dev
             - libswscale-dev
             - python-dev
+            - python3-dev
     homebrew:
         # Unfortunately, as of writing, we need to update Homebrew.
         update: true
