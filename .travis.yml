@@ -22,18 +22,14 @@ addons:
             - wget
             - yasm
             - zlib1g-dev
-            - libavcodec
-            - libavdevice
+            - libavcodec-dev
             - libavdevice-dev
-            - libavfilter
             - libavfilter-dev
-            - libavformat
-            - libavutil
-            - libswresample
-            - libswscale
+            - libavformat-dev
+            - libavutil-dev
+            - libswresample-dev
+            - libswscale-dev
             - pkg-config
-            - python-dev
-            - python3-dev
             homebrew:
         # Unfortunately, as of writing, we need to update Homebrew.
         update: true
