@@ -31,33 +31,15 @@ addons:
             - libswscale-dev
             - python-dev
             - python3-dev
-    homebrew:
-        # Unfortunately, as of writing, we need to update Homebrew.
-        update: true
-        packages:
-            - automake
-            - libass
-            - libjpeg
-            - libpng
-            - libtool
-            - libvorbis
-            - libvpx
-            - nasm
-            - opus
-            - shtool
-            - texi2html
-            - theora
-            - wget
-            - x264
 before_install:
   - mv travis_secrets.yaml secrets.yaml
 #  - sudo apt-get install -y python-dev pkg-config libavutil-dev libswscale-dev libavresample-dev libavfilter-dev
 #  - sudo apt-get install -y python-dev python3-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev libjpeg-dev libfreetype6-dev zlib1g-dev yasm ffmpeg
 #  - pip3 install --upgrade pip
 #  - pip install setuptools
-#  - wget https://www.ffmpeg.org/releases/ffmpeg-3.2.14.tar.gz
-#  - tar -zxvf ffmpeg-3.2.14.tar.gz
-#  - cd ffmpeg-3.2.14 && ./configure --disable-yasm && make && sudo make install && cd ..
+  - wget https://www.ffmpeg.org/releases/ffmpeg-4.2.1.tar.bz2
+  - tar -xjf ffmpeg-4.2.1.tar.bz2
+  - cd ffmpeg-4.2.1 && ./configure --disable-static --enable-shared --disable-doc && make && sudo make install && cd ..
 install:
   - pip3 install homeassistant
 script:
