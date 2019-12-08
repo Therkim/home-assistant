@@ -22,6 +22,24 @@ addons:
             - wget
             - yasm
             - zlib1g-dev
+    homebrew:
+        # Unfortunately, as of writing, we need to update Homebrew.
+        update: true
+        packages:
+            - automake
+            - libass
+            - libjpeg
+            - libpng
+            - libtool
+            - libvorbis
+            - libvpx
+            - nasm
+            - opus
+            - shtool
+            - texi2html
+            - theora
+            - wget
+            - x264
 before_install:
   - mv travis_secrets.yaml secrets.yaml
 #  - sudo apt-get install -y python-dev pkg-config libavutil-dev libswscale-dev libavresample-dev libavfilter-dev
