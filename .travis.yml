@@ -29,7 +29,6 @@ addons:
             - libavutil-dev
             - libswresample-dev
             - libswscale-dev
-            - pkg-config
     homebrew:
         # Unfortunately, as of writing, we need to update Homebrew.
         update: true
