@@ -23,6 +23,7 @@ logbook:
 logger: !include logger.yaml
 media_player: !include media_player.yaml
 mobile_app:
+neato: !include neato.yaml
 nest: !include nest.yaml
 notify: !include notify.yaml
 person:
