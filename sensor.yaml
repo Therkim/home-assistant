@@ -68,14 +68,14 @@
     command: systemctl show somactrl | awk -F= '/^SubState=/ {print $2}'
     scan_interval: 20
   - platform: command_line
-    name: gas
+    name: 
     unit_of_measurement: 'm3'
-    scan_interval: 600
+#    scan_interval: 600
     command: 'sh /home/homeassistant/gas.sh'
   - platform: command_line
     name: electricity
     unit_of_measurement: 'kWh'
-    scan_interval: 600
+#    scan_interval: 600
     command: 'sh /home/homeassistant/electricity.sh'
   - platform: template
     sensors:
@@ -233,15 +233,3 @@
       - vpn
       - lan
       - wan
-  - platform: command_line
-    name: octopus_gas
-    value_template: '{{ value_json.count }}'
-    json_attributes: 
-      - results
-    command: !secret octopus_gas
-  - platform: command_line
-    name: octopus_elec
-    value_template: '{{ value_json.count }}'
-    json_attributes: 
-      - results
-    command: !secret octopus_elec
