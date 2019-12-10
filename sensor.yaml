@@ -35,7 +35,7 @@
         query: "SELECT * FROM states WHERE entity_id = 'sensor.dark_sky_daytime_high_temperature_0d' ORDER BY ABS(strftime('%s', created) - strftime('%s', datetime('now'), '-1 day')) LIMIT 1;"
         column: 'state'
       - name: "Yesterday Energy Cost"
-        query: "SELECT * FROM states WHERE entity_id = 'sensor.total_power_cost' ORDER BY MAX(strftime('%s', created) - strftime('%s', datetime('now') )) LIMIT 1;"
+        query: "SELECT * FROM states WHERE entity_id = 'sensor.total_power_cost' ORDER BY ABS(strftime('%s', created) - strftime('%s', datetime('now') )) LIMIT 1;"
         column: 'state'
   - platform: systemmonitor
     resources:
