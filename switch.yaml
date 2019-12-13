@@ -150,10 +150,3 @@
         command_off: 'sudo systemctl stop nginx.service'
         command_state: 'systemctl status nginx.service | grep -c -w "running"'
         value_template: '{{ value == "1" }}'  
-      hoover:
-        command_on: '/home/homeassistant/botvac_clean.sh'
-        command_off: '/home/homeassistant/botvac_stop.sh'
-        command_state: 'true'
-        value_template: "{{ states('sensor.hoover_dock_w') | int < 20 }}"
-      hoover_beep:
-        command_on: '/home/homeassistant/botvac_beep.sh'
