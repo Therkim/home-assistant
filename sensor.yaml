@@ -198,12 +198,6 @@
         friendly_name: 'Stair Battery'
         value_template: '{{state_attr("binary_sensor.stair_motion", "battery_level")}}'
         unit_of_measurement: '%'
-      hoover_dock_w:
-        value_template: '{{ states.switch.hoover_2.attributes["current_power_w"] | replace(" W", "") | float }}'
-        unit_of_measurement: 'W'
-      hoover_dock_a:
-        value_template: '{{ states.switch.hoover_2.attributes["current_a"] | float }}'
-        unit_of_measurement: 'A'
   - platform: synologydsm
     host: !secret synologydsm_host
     port: !secret synologydsm_port
