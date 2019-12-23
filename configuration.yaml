@@ -11,7 +11,7 @@ cloud: !include cloud.yaml
 config:
 device_tracker: !include device_tracker.yaml
 discovery:
-frontend: !include themes.yaml
+frontend: !include frontend.yaml
 google: !include google.yaml
 group: !include groups.yaml
 #hacs: !include hacs.yaml
