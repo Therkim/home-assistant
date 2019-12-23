@@ -1,5 +1,5 @@
-- cal_id: !secret cal_id
-  entities:
-  - device_id: Meetings
-    name: Meetings
-    track: true
+#- cal_id: !secret cal_id
+#  entities:
+#  - device_id: Meetings
+#    name: Meetings
+#    track: true
