@@ -12,6 +12,7 @@
   - platform: cert_expiry
     host: !secret cert_expiry_host
   - platform: uptime
+  - platform: dnsip
   - platform: version
     source: pypi
   - platform: version
