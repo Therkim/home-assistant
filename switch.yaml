@@ -5,6 +5,9 @@
       - light.office
       - light.bedroom
     min_brightness: 30
+  - platform: wake_on_lan
+    mac: !secret wol_mac
+    host: !secret wol_broadcast
   - platform: template
     switches:
       ps4_switch:
