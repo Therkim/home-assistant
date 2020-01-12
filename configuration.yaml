@@ -38,4 +38,4 @@ switch: !include switch.yaml
 system_health:
 wake_on_lan:
   mac: !secret wol_mac
-  broadcast_address: !secret wol_address
+  broadcast_address: !secret wol_broadcast
