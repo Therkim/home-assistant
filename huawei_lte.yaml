@@ -1,7 +1,0 @@
-url: !secret huawei_ip
-username: !secret huawei_username
-password: !secret huawei_password
-notify:
-  name: huawei_lte
-  recipient:
-    - !secret recipient1
