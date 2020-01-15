@@ -16,7 +16,7 @@ google: !include google.yaml
 group: !include groups.yaml
 #hacs: !include hacs.yaml
 history: !include history.yaml
-huawei_let: !include huawei_lte.yaml
+huawei_lte: !include huawei_lte.yaml
 homeassistant: !include homeassistant.yaml
 http: !include http.yaml
 input_boolean: !include input_boolean.yaml
