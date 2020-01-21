@@ -1,27 +1,14 @@
 discovery: true
 switch:
-  host: 10.0.0.10
-switch:
-  host: 10.0.0.12
-switch:
-  host: 10.0.0.13
-switch:
-  host: 10.0.0.14
-switch:
-  host: 10.0.0.16
-switch:
-  host: 10.0.0.18
-switch:
-  host: 10.0.0.19
-switch:
-  host: 10.0.0.20
-switch:
-  host: 10.0.0.21
-switch:
-  host: 10.0.0.22
-switch:
-  host: 10.0.0.23
-switch:
-  host: 10.0.0.24
-switch:
-  host: 10.0.0.26
+  - host: 10.0.0.10
+  - host: 10.0.0.12
+  - host: 10.0.0.13
+  - host: 10.0.0.14
+  - host: 10.0.0.16
+  - host: 10.0.0.18
+  - host: 10.0.0.19
+  - host: 10.0.0.20
+  - host: 10.0.0.21
+  - host: 10.0.0.23
+  - host: 10.0.0.24
+  - host: 10.0.0.26
