@@ -4,6 +4,7 @@
     lights_brightness:
       - light.office
       - light.bedroom
+      - light.wled_office_door
     min_brightness: 30
   - platform: wake_on_lan
     mac: !secret wol_mac
