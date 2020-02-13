@@ -84,8 +84,8 @@
         value_template: "{{ is_state('input_boolean.meeting_status', 'on') }}"
         friendly_name: "Meeting Status"
       tom_bed_sensor:
-        value_template: "{% if states('sensor.bed_right_value')| float > 25 %}Occupied{% else %}empty{% endif %}"
-        icon_template: "{% if states('sensor.bed_right_value')| float > 25 %}mdi:hotel{% else %}mdi:bed-empty{% endif %}"
+        value_template: "{% if states('sensor.bed_right_value')| float > 20 %}Occupied{% else %}empty{% endif %}"
+        icon_template: "{% if states('sensor.bed_right_value')| float > 20 %}mdi:hotel{% else %}mdi:bed-empty{% endif %}"
       hannah_bed_sensor:
         value_template: "{% if states('sensor.bed_left_value')| float > 20 %}Occupied{% else %}empty{% endif %}"
         icon_template: "{% if states('sensor.bed_left_value')| float > 20 %}mdi:hotel{% else %}mdi:bed-empty{% endif %}"
