@@ -7,6 +7,12 @@
     min_brightness: 30
   - platform: wake_on_lan
     mac: !secret wol_mac
+    name: Computer
+    turn_off:
+      service: mqtt.publish
+      data:
+        payload: ""
+        topic: iotlink/workgroup/pandora/commands/hibernate
     broadcast_address: !secret wol_broadcast
   - platform: template
     switches:
