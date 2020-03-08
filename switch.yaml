@@ -8,12 +8,13 @@
   - platform: wake_on_lan
     mac: !secret wol_mac
     name: Computer
+    broadcast_address: !secret wol_broadcast
+    host: !secret wol_address
     turn_off:
       service: mqtt.publish
       data:
         payload: ""
         topic: iotlink/workgroup/pandora/commands/hibernate
-    broadcast_address: !secret wol_broadcast
   - platform: template
     switches:
       ps4_switch:
