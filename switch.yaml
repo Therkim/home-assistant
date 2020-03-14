@@ -8,7 +8,7 @@
   - platform: wake_on_lan
     mac: !secret wol_mac
     name: Computer
-#    broadcast_address: !secret wol_broadcast
+    broadcast_address: !secret wol_broadcast
     host: !secret wol_address
     turn_off:
       service: mqtt.publish
