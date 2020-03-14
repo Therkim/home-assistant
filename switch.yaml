@@ -9,7 +9,7 @@
     mac: !secret wol_mac
     name: Computer
 #    broadcast_address: !secret wol_broadcast
-#    host: !secret wol_address
+    host: !secret wol_address
     turn_off:
       service: mqtt.publish
       data:
