@@ -1,2 +1,3 @@
   instances:
   - host: !secret remote_ip
+    access_token: !secret remote_token
