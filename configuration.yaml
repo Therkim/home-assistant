@@ -29,6 +29,7 @@ notify: !include notify.yaml
 person:
 plex: !include plex.yaml
 recorder: !include recorder.yaml
+remote_homeassistant: !include remote.yaml
 scene: !include scene.yaml
 script: !include scripts.yaml
 sensor: !include sensor.yaml
