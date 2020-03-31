@@ -1,0 +1,2 @@
+  instances:
+  - host: !secret remote_ip
