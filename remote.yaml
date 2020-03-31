@@ -1,3 +1,6 @@
   instances:
   - host: !secret remote_ip
     access_token: !secret remote_token
+    entity_prefix: "remote_"
+    verify_ssl: false
+    secure: false
