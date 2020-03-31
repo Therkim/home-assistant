@@ -4,3 +4,6 @@
     entity_prefix: "remote_"
     verify_ssl: false
     secure: false
+    include:
+      domains:
+        - switch
