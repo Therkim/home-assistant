@@ -95,31 +95,31 @@
         command_on: 'irsend send_once aircon temp_down'
         command_off: 'irsend send_once aircon temp_down'
         friendly_name: 'AC Temp Down'
-        command_state: 'false'
-        value_template: '{{ value == "1" }}'
+#        command_state: 'false'
+#        value_template: '{{ value == "1" }}'
       ac_temp_up:
         command_on: 'irsend send_once aircon temp_up'
         command_off: 'irsend send_once aircon temp_up'
         friendly_name: 'AC Temp Up'
-        command_state: 'false'
-        value_template: '{{ value == "1" }}'
+#        command_state: 'false'
+#        value_template: '{{ value == "1" }}'
       ac_mode:
         command_on: 'irsend send_once aircon mode'
         command_off: 'irsend send_once aircon mode'
         friendly_name: 'AC Mode'
-        command_state: 'false'
-        value_template: '{{ value == "1" }}'
+#        command_state: 'false'
+#        value_template: '{{ value == "1" }}'
       ac_speed:
         command_on: 'irsend send_once aircon speed'
         command_off: 'irsend send_once aircon speed'
         friendly_name: 'AC Speed'
-        command_state: 'false'
-        value_template: '{{ value == "1" }}'
+#        command_state: 'false'
+#        value_template: '{{ value == "1" }}'
       ac_swing:
         command_on: 'irsend send_once aircon swing'
         friendly_name: 'AC Swing'
-        command_state: 'false'
-        value_template: '{{ value == "1" }}'
+#        command_state: 'false'
+#        value_template: '{{ value == "1" }}'
       foscam_living_room:
         command_on: !secret foscam_turn_on_start_motion
         command_off: !secret foscam_turn_off_stop_motion
