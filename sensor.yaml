@@ -69,6 +69,9 @@
     command: systemctl show somactrl | awk -F= '/^SubState=/ {print $2}'
     scan_interval: 20
   - platform: command_line
+    name: LIRC Status
+    command: systemctl show lircd | awk -F= '/^SubState=/ {print $2}'
+  - platform: command_line
     name: gas
     unit_of_measurement: 'm3'
 #    scan_interval: 600
