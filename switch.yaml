@@ -158,4 +158,9 @@
         command_on: 'sudo systemctl start nginx.service'
         command_off: 'sudo systemctl stop nginx.service'
         command_state: 'systemctl status nginx.service | grep -c -w "running"'
+        value_template: '{{ value == "1" }}'
+      lircd:
+        command_on: 'sudo systemctl start lircd.service'
+        command_off: 'sudo systemctl stop lircd.service'
+        command_state: 'systemctl status lircd.service | grep -c -w "running"'
         value_template: '{{ value == "1" }}'  
