@@ -12,9 +12,9 @@ bedroom_blind_automation:
   icon: mdi:blinds
 office_ac_automation:
   name: Office AC Automation
-  initial: on
+  initial: off
   icon: mdi:air-conditioner
 living_room_ac_automation:
   name: Living Room AC Automation
-  initial: on
+  initial: off
   icon: mdi:air-conditioner
