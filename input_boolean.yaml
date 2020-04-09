@@ -6,3 +6,7 @@ office_blind_automation:
   name: Office Blind Automation
   initial: on
   icon: mdi:blinds
+bedroom_blind_automation:
+  name: Bedroom Blind Automation
+  initial: on
+  icon: mdi:blinds
