@@ -164,7 +164,7 @@
         command_off: 'sudo systemctl stop lircd.service'
         command_state: 'systemctl status lircd.service | grep -c -w "running"'
         value_template: '{{ value == "1" }}'
-      node-red:
+      node_red:
         command_on: 'sudo systemctl start node-red.service'
         command_off: 'sudo systemctl stop node-red.service'
         command_state: 'systemctl status node-red | grep -c -w "running"'
