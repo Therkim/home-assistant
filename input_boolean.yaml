@@ -4,17 +4,13 @@ meeting_status:
   icon: mdi:cisco-webex
 office_blind_automation:
   name: Office Blind Automation
-  initial: on
   icon: mdi:blinds
 bedroom_blind_automation:
   name: Bedroom Blind Automation
-  initial: on
   icon: mdi:blinds
 office_ac_automation:
   name: Office AC Automation
-  initial: off
   icon: mdi:air-conditioner
 living_room_ac_automation:
   name: Living Room AC Automation
-  initial: off
   icon: mdi:air-conditioner
