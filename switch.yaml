@@ -130,6 +130,7 @@
         command_on: !secret foscam_aircon
       foscam_center:
         command_on: !secret foscam_center
+        command_off: !secret foscam_turn_off
       foscam_zoom_in:
         command_on: !secret foscam_zoom_in
       foscam_zoom_out:
