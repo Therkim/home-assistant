@@ -4,6 +4,9 @@ meeting_status:
 office_blind_automation:
   name: Office Blind Automation
   icon: mdi:blinds
+living_room_blind_automation:
+  name: Living Room Blind Automation
+  icon: mdi:blinds
 bedroom_blind_automation:
   name: Bedroom Blind Automation
   icon: mdi:blinds
