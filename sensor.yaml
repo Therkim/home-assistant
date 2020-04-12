@@ -126,7 +126,7 @@
       average_living_room_temp:
         value_template: '{{ ((((states.sensor.living_room_door_temperature.state | float) +
         (states.sensor.media_center_temperature_2.state | float)) /2) | round(1)) }}'
-        friendly_name: 'Average Temp'
+        friendly_name: 'Average Living Room Temp'
         unit_of_measurement: '°C'
       total_power_cost:
         value_template: "{{ ((states('sensor.total_electricity_cost') | float) + (states('sensor.total_gas_cost') | float) + (0.1911 + 0.16)) | round(2) }}"
