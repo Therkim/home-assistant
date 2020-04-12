@@ -118,6 +118,16 @@
         (states.sensor.office_temperature_2.state | float)) /5) | round(1)) }}'
         friendly_name: 'Average Temp'
         unit_of_measurement: '°C'
+      average_office_temp:
+        value_template: '{{ ((((states.sensor.desk_temperature_2.state | float) +
+        (states.sensor.office_temperature_2.state | float)) /2) | round(1)) }}'
+        friendly_name: 'Average Office Temp'
+        unit_of_measurement: '°C'
+      average_living_room_temp:
+        value_template: '{{ ((((states.sensor.living_room_door_temperature.state | float) +
+        (states.sensor.media_center_temperature_2.state | float)) /2) | round(1)) }}'
+        friendly_name: 'Average Temp'
+        unit_of_measurement: '°C'
       total_power_cost:
         value_template: "{{ ((states('sensor.total_electricity_cost') | float) + (states('sensor.total_gas_cost') | float) + (0.1911 + 0.16)) | round(2) }}"
         friendly_name: 'Total cost (£)'
