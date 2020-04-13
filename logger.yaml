@@ -1,11 +1,11 @@
 logs:
-  default: error
-  homeassistant.components.http.ban: warning
-  homeassistant.components.media_player.plex: error
-  homeassistant.components.sensor.synologydsm: error
-  homeassistant.components.media_player.cast: error
-  homeassistant.components.recorder: error
-  homeassistant.components.loader: error
-  homeassistant.core: error
-  homeassistant.components.websocket_api: error
-  homeassistant.components.mqtt: error
+#  default: error
+#  homeassistant.components.http.ban: warning
+#  homeassistant.components.media_player.plex: error
+#  homeassistant.components.sensor.synologydsm: error
+#  homeassistant.components.media_player.cast: error
+#  homeassistant.components.recorder: error
+#  homeassistant.components.loader: error
+#  homeassistant.core: error
+#  homeassistant.components.websocket_api: error
+#  homeassistant.components.mqtt: error
