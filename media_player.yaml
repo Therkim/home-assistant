@@ -4,7 +4,7 @@
     mac: !secret braviatv_mac
     name: TV
     amp: true
-    android: false
+    android: true
     sourcefilter:
       - 'HDMI'
 
