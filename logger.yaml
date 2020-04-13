@@ -7,3 +7,5 @@ logs:
   homeassistant.components.recorder: error
   homeassistant.components.loader: error
   homeassistant.core: error
+  homeassistant.components.websocket_api: error
+  homeassistant.components.mqtt: error
