@@ -7,6 +7,6 @@
     android: false
     sourcefilter:
       - 'HDMI'
-- platform: braviatv
-  host: !secret braviatv_host
-  name: "HA Standard Bravia TV"
+  - platform: braviatv
+    host: !secret braviatv_host
+    name: "HA Standard Bravia TV"
