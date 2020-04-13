@@ -1,4 +1,5 @@
 logs:
+  default: error
   homeassistant.components.http.ban: warning
   homeassistant.components.media_player.plex: error
   homeassistant.components.sensor.synologydsm: error
