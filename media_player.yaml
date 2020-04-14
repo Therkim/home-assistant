@@ -39,6 +39,12 @@
     name: "Playstation 4 Pro"
     children:
       - media_player.playstation_4
+    state_template: >
+    {% if (states.switch.ps4_switch == 'off') %}
+    off
+    {% else %}
+    {{ states.switch.ps4_switch }}
+    {% endif %}
     commands:
       turn_on:
         service: switch.turn_on
