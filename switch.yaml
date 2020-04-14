@@ -6,10 +6,15 @@
       - light.bedroom
     min_brightness: 30
   - platform: wake_on_lan
-    mac: !secret wol_mac
+    mac: !secret pc_mac
     name: Computer
-    broadcast_address: !secret wol_broadcast
-    host: !secret wol_address
+    host: !secret pc_address
+    broadcast_address: !secret pc_broadcast
+  - platform: wake_on_lan
+    mac: !secret tv_mac
+    name: TV
+    broadcast_address: !secret tv_broadcast
+    host: !secret tv_address
     turn_off:
       service: mqtt.publish
       data:
