@@ -10,5 +10,3 @@
   - platform: braviatv
     host: !secret braviatv_host
     name: "HA Standard Bravia TV"
-    sourcefilter:
-      - 'HDMI'
