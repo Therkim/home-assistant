@@ -54,12 +54,6 @@
           entity_id: script.1551994862432  
         turn_off:
         value_template: false
-      spiderman:
-        turn_on:
-          service: script.turn_on
-          entity_id: script.1551994781025
-        turn_off:
-        value_template: false
       warships:
         turn_on:
           service: script.turn_on
