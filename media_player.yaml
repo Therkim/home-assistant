@@ -55,4 +55,5 @@
         data: 
           entity_id: switch.ps4_switch
     attributes:
+      source: media_player.playstation_4|source
       source_list: media_player.playstation_4|source_list
