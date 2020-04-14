@@ -83,5 +83,9 @@ alexa:
       - switch.foscam_backleft
       - switch.node_red
       - switch.lircd
-      
+      - switch.thomas_s_bose_quietcomfort_35_ii_do_not_disturb_switch
+      - media_player.thomas_s_bose_quietcomfort_35_ii
+      - switch.thomas_s_bose_quietcomfort_35_ii_repeat_switch
+      - switch.thomas_s_bose_quietcomfort_35_ii_shuffle_switch
+      - media_player.plex_playstation_4_pro
       
