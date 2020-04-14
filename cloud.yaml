@@ -58,3 +58,30 @@ alexa:
       - switch.bedroom_shuffle_switch
       - switch.living_room_do_not_disturb_switch
       - switch.living_room_shuffle_switch
+      - switch.wled_living_room_sync_send 
+      - switch.wled_living_room_nightlight
+      - switch.wled_living_room_sync_receive
+      - switch.wled_office_door_sync_send
+      - switch.wled_office_door_sync_receive
+      - switch.wled_office_door_nightlight
+      - switch.everywhere_repeat_switch
+      - switch.thomas_s_alexa_apps_shuffle_switch
+      - switch.thomas_s_alexa_apps_repeat_switch
+      - switch.thomas_s_alexa_apps_do_not_disturb_switch
+      - switch.office_echo_dot_shuffle_switch
+      - switch.this_device_do_not_disturb_switch
+      - switch.this_device_shuffle_switch
+      - switch.bedroom_echo_dot_shuffle_switch
+      - switch.this_device_repeat_switch
+      - switch.everywhere_shuffle_switch
+      - media_player.everywhere
+      - media_player.this_device
+      - media_player.plex_oneplus_a6013
+      - media_player.plex_chromecast
+      - media_player.thomas_s_alexa_apps
+      - switch.nginx
+      - switch.foscam_backleft
+      - switch.node_red
+      - switch.lircd
+      
+      
