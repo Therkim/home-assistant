@@ -49,4 +49,4 @@
         data: 
           entity_id: switch.ps4_switch
       attributes:
-        state: switch.ps4_switch
+        state: switch.ps4_switch|state
