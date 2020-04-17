@@ -1,2 +1,1 @@
-stream_source: !secret foscam_rtsp_address
-filename: /tmp/foscam_stream.mp4
+
