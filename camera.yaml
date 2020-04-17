@@ -1,6 +1,7 @@
   - platform: foscam
     ip: !secret camera_ip
     port: !secret camera_port
+    rtsp_port: !secret camera_rtsp_port
     username: !secret foscam_user
     password: !secret foscam_password
     name: "Camera"
