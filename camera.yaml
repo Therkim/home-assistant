@@ -5,3 +5,7 @@
     username: !secret foscam_user
     password: !secret foscam_password
     name: "Camera"
+  - platform: generic
+    name: stream
+    stream_source: !secret foscam_rtsp_address
+    filename: /tmp/foscam_stream.mp4
