@@ -8,3 +8,4 @@
   - platform: generic
     name: stream
     stream_source: !secret foscam_rtsp_address
+    still_image_url: !secret foscam_still_address
