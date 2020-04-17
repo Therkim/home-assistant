@@ -114,8 +114,8 @@
         value_template: '{{ ((((states.sensor.desk_temperature_2.state | float) +
         (states.sensor.hall_temperature_2.state | float) +
         (states.sensor.living_room_door_temperature.state | float) +
+        (states.sensor.bedroom_temperature.state | float) +
         (states.sensor.media_center_temperature_2.state | float) +
-        (states.sensor.sensor.bedroom_temperature.state | float) +
         (states.sensor.office_temperature_2.state | float)) /6) | round(1)) }}'
         friendly_name: 'Average Temp'
         unit_of_measurement: '°C'
