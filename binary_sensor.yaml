@@ -9,3 +9,5 @@
 - platform: ping
   host: !secret switch_address
   name: "Nintendo Switch"
+  count: 2
+  scan_interval: 30
