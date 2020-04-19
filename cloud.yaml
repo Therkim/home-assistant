@@ -79,6 +79,8 @@ alexa:
       - media_player.plex_oneplus_a6013
       - media_player.plex_chromecast
       - media_player.thomas_s_alexa_apps
+      - media_player.playstation_4_pro
+      - media_player.tv_2
       - switch.nginx
       - switch.foscam_backleft
       - switch.node_red
@@ -88,4 +90,4 @@ alexa:
       - switch.thomas_s_bose_quietcomfort_35_ii_repeat_switch
       - switch.thomas_s_bose_quietcomfort_35_ii_shuffle_switch
       - media_player.plex_playstation_4_pro
-      
+      - switch.tv
