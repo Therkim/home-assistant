@@ -40,7 +40,7 @@
     children:
       - media_player.playstation_4
     state_template: >
-      {% if is_state('media_player.playstation_4', 'standby') %}
+      {% if is_state('media_player.playstation_4', 'standby') or is_state('media_player.playstation_4', 'unknown') %}
       off
       {% elif is_state('media_player.playstation_4', 'idle') %}
       on
@@ -49,13 +49,13 @@
       {% endif %}
     commands:
       turn_on:
-        service: switch.turn_on
+        service: media_player.turn_off
         data: 
-          entity_id: switch.ps4_switch
+          entity_id: media_player.playstation_4_pro
       turn_off:
-        service: switch.turn_off
+        service: media_player.turn_off
         data: 
-          entity_id: switch.ps4_switch
+          entity_id: media_player.playstation_4_pro
     attributes:
       #state: media_player.playstation_4
       source: media_player.playstation_4|source
