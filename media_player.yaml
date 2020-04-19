@@ -42,10 +42,7 @@
     state_template: >
       {% if is_state('media_player.playstation_4', 'standby') %}
       off
-      {% elif %}
-      {% if is_state('media_player.playstation_4', 'idle') %}
-      on
-      {% elif %}
+      {% else %}
       {{ states('media_player.playstation_4') }}
       {% endif %}
     commands:
