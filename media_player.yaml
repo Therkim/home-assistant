@@ -49,7 +49,7 @@
       {% endif %}
     commands:
       turn_on:
-        service: media_player.turn_off
+        service: media_player.turn_on
         data: 
           entity_id: media_player.playstation_4_pro
       turn_off:
