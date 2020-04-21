@@ -219,7 +219,7 @@
         unit_of_measurement: '%'
       bedroom_battery:
         friendly_name: 'Bedroom Battery'
-        value_template: '{{state_attr("binary_sensor.binary_sensor.bedroom_motion", "battery_level")}}'
+        value_template: '{{state_attr("binary_sensor.bedroom_motion", "battery_level")}}'
         unit_of_measurement: '%'
   - platform: synologydsm
     host: !secret synologydsm_host
