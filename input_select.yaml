@@ -1,0 +1,12 @@
+hannah_meeting_status:
+  name: Hannah Meeting
+  options:
+    - None
+    - Video
+    - Audio
+tom_meeting_status:
+  name: Tom Meeting
+  options:
+    - None
+    - Video
+    - Audio
