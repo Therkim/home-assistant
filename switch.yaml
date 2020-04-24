@@ -171,3 +171,5 @@
         command_off: 'sudo systemctl stop node-red.service'
         command_state: 'systemctl status node-red | grep -c -w "running"'
         value_template: '{{ value == "1" }}'
+      bravia_turn_on:
+        command_on: !secret bravia_turn_on
