@@ -7,3 +7,4 @@
   foscam_turn_on_start_motion: !secret foscam_turn_on_start_motion
   foscam_turn_off_stop_motion: !secret  foscam_turn_off_stop_motion
   ha_upgrade: !secret ha_upgrade
+  bravia_power_on: "curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '<?xml version="1.0" encoding="utf-8"?><s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><s:Body><u:X_SendIRCC xmlns:u="urn:schemas-sony-com:service:IRCC:1"><IRCCCode>AAAAAQAAAAEAAAAVAw==</IRCCCode></u:X_SendIRCC></s:Body></s:Envelope>' http://10.0.0.240/sony/IRCC?"
