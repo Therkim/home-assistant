@@ -29,6 +29,7 @@ nest: !include nest.yaml
 notify: !include notify.yaml
 person:
 plex: !include plex.yaml
+ps4_custom:
 recorder: !include recorder.yaml
 remote_homeassistant: !include remote.yaml
 scene: !include scene.yaml
