@@ -1,6 +1,14 @@
 host: 10.0.240
 name: "LG TV"
 turn_on_action: 
-    service: wake_on_lan.send_magic_packet
-    data:
-      mac: AA-BB-CC-DD-EE-FF
+  service: wake_on_lan.send_magic_packet
+  data:
+    mac: AA-BB-CC-DD-EE-FF
+customize:
+  sources:
+    - Netflix
+    - AmazonPrime
+    - Plex
+    - Switch
+    - PS4
+    - Cast
