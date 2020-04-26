@@ -9,9 +9,3 @@
     name: stream
     stream_source: !secret foscam_rtsp_address
     still_image_url: !secret foscam_still_address
-  - platform: proxy
-    entitiy_id: camera.camera
-    max_stream_width: 1920
-    max_image_width: 1920
-    max_stream_height: 1080
-    max_image_height: 1080
