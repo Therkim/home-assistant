@@ -42,3 +42,4 @@ switch: !include switch.yaml
 system_health:
 tplink: !include tplink.yaml
 wake_on_lan:
+#webostv: !include webostv.yaml
