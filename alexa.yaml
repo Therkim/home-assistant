@@ -18,3 +18,4 @@ smart_home:
       - media_player.tv_2
       - switch.tv_pause
       - switch.tv_play
+      - group.lamp
