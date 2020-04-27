@@ -1,4 +1,5 @@
 auth:
+alexa: !include alexa.yaml
 alexa_media: !include alexa_media.yaml
 automation: !include automations.yaml
 binary_sensor: !include binary_sensor.yaml
@@ -7,7 +8,7 @@ camera: !include camera.yaml
 cast: !include cast.yaml
 circadian_lighting: !include circadian_lighting.yaml
 cover: !include cover.yaml
-cloud: !include cloud.yaml
+#cloud: !include cloud.yaml
 config:
 device_tracker: !include device_tracker.yaml
 discovery:
