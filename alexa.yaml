@@ -19,4 +19,5 @@ smart_home:
       - switch.tv_play
       - group.lamp
       - switch.circadian_lighting_circadian_lighting
+      - switch.record_player
 
