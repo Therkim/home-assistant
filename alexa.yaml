@@ -18,3 +18,5 @@ smart_home:
       - switch.tv_pause
       - switch.tv_play
       - group.lamp
+      - switch.circadian_lighting_circadian_lighting
+
