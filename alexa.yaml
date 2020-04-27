@@ -3,3 +3,15 @@ smart_home:
   endpoint: https://api.eu.amazonalexa.com/v3/events
 #  client_id: !secret alexa_skill_client_id
 #  client_secret: !secret alexa_skill_client_secret
+  filter:
+    include_entities:
+      - switch.ps4_switch
+      - switch.aircon
+      - switch.remote_aircon
+      - switch.bed
+      - switch.lamp
+      - cover.living_room
+      - cover.bedroom1
+      - cover.office1
+      - switch.tumble_dryer
+      - switch.foscam_living_room
