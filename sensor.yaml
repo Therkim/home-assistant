@@ -221,7 +221,7 @@
         friendly_name: 'Bedroom Battery'
         value_template: '{{state_attr("binary_sensor.bedroom_motion", "battery_level")}}'
         unit_of_measurement: '%'
-  - platform: synologydsm
+  - platform: synology_dsm
     host: !secret synologydsm_host
     port: !secret synologydsm_port
     ssl: false
