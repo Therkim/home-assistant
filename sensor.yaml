@@ -221,20 +221,20 @@
         friendly_name: 'Bedroom Battery'
         value_template: '{{state_attr("binary_sensor.bedroom_motion", "battery_level")}}'
         unit_of_measurement: '%'
-  - platform: synology_dsm
-    host: !secret synologydsm_host
-    port: !secret synologydsm_port
-    ssl: false
+#  - platform: synology_dsm
+#    host: !secret synologydsm_host
+#    port: !secret synologydsm_port
+#    ssl: false
 #    name: Synology NAS
-    username: !secret synology_username
-    password: !secret synology_password
-    monitored_conditions:
-      - cpu_total_load
-      - memory_real_usage
-      - volume_status
-      - volume_percentage_used
-      - disk_temp
-      - disk_smart_status
+#    username: !secret synology_username
+#    password: !secret synology_password
+#    monitored_conditions:
+#      - cpu_total_load
+#      - memory_real_usage
+#      - volume_status
+#      - volume_percentage_used
+#      - disk_temp
+#      - disk_smart_status
   - platform: unifigateway
     host: !secret unifi_controller
     port: !secret unifigateway_port
