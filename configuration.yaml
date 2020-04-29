@@ -8,14 +8,12 @@ camera: !include camera.yaml
 cast: !include cast.yaml
 circadian_lighting: !include circadian_lighting.yaml
 cover: !include cover.yaml
-#cloud: !include cloud.yaml
 config:
 device_tracker: !include device_tracker.yaml
 discovery:
 frontend: !include frontend.yaml
 google: !include google.yaml
 group: !include groups.yaml
-#hacs: !include hacs.yaml
 history: !include history.yaml
 homeassistant: !include homeassistant.yaml
 http: !include http.yaml
@@ -29,7 +27,6 @@ neato: !include neato.yaml
 nest: !include nest.yaml
 notify: !include notify.yaml
 person:
-#plex: !include plex.yaml
 ps4_custom:
 recorder: !include recorder.yaml
 remote_homeassistant: !include remote.yaml
