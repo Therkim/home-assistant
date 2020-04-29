@@ -225,7 +225,7 @@
     host: !secret synologydsm_host
     port: !secret synologydsm_port
     ssl: false
-    name: Synology NAS
+#    name: Synology NAS
     username: !secret synology_username
     password: !secret synology_password
     monitored_conditions:
