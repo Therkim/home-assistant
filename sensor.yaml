@@ -17,11 +17,6 @@
     source: pypi
   - platform: version
     source: local
-  - platform: plex
-    host: !secret plex_host
-    port: !secret plex_port
-    ssl: false
-    token: !secret plex_token
   - platform: time_date
     display_options:
       - 'time'
