@@ -3,12 +3,12 @@ name: "LG TV"
 turn_on_action: 
   service: wake_on_lan.send_magic_packet
   data:
-    mac: 64-95-6C-B0-04-74
+    mac: !secret tv_mac
 customize:
   sources:
     - Netflix
     - AmazonPrime
     - Plex
     - Switch
-    - PS4
+    - PlayStation
     - Cast
