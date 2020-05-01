@@ -7,7 +7,7 @@ turn_on_action:
 customize:
   sources:
     - Netflix
-    - AmazonPrime
+    - "Amazon Prime Video"
     - Plex
     - Switch
     - PlayStation
