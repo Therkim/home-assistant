@@ -3,7 +3,7 @@ name: "LG TV"
 turn_on_action: 
   service: wake_on_lan.send_magic_packet
   data:
-    mac: AA-BB-CC-DD-EE-FF
+    mac: 64-95-6C-B0-04-74
 customize:
   sources:
     - Netflix
