@@ -3,6 +3,7 @@ name: "LG TV"
 turn_on_action: 
   service: wake_on_lan.send_magic_packet
   data:
+    broadcast_address: !secret tv_broadcast
     mac: !secret tv_mac
 customize:
   sources:
