@@ -59,9 +59,9 @@
     name: MQTT Status
     command: systemctl show mosquitto | awk -F= '/^SubState=/ {print $2}'
     scan_interval: 20
-  - platform: command_line
-    name: SomaCtrl Status
-    command: systemctl show somactrl | awk -F= '/^SubState=/ {print $2}'
+#  - platform: command_line
+#    name: SomaCtrl Status
+#    command: systemctl show somactrl | awk -F= '/^SubState=/ {print $2}'
     scan_interval: 20
   - platform: command_line
     name: LIRC Status
