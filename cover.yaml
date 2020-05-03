@@ -8,5 +8,5 @@
   entities:
     - cover.living_room_1
     - cover.living_room_2
-    - cover.bedroom1
-    - cover.office1
+    - cover.bedroom_1
+    - cover.office_1
