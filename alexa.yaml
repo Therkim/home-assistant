@@ -20,4 +20,7 @@ smart_home:
       - group.lamp
       - switch.circadian_lighting_circadian_lighting
       - switch.record_player
+      - script.1546800827638
+      - script.1546801013523
+      - script.1588713530011
 
