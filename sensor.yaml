@@ -62,7 +62,7 @@
 #  - platform: command_line
 #    name: SomaCtrl Status
 #    command: systemctl show somactrl | awk -F= '/^SubState=/ {print $2}'
-    scan_interval: 20
+#    scan_interval: 20
   - platform: command_line
     name: LIRC Status
     command: systemctl show lircd | awk -F= '/^SubState=/ {print $2}'
