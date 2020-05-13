@@ -14,10 +14,11 @@ smart_home:
       - cover.office1
       - switch.tumble_dryer
       - switch.foscam_living_room
+      - switch.media_center
       - media_player.lg_tv
       - switch.tv_pause
       - switch.tv_play
-      - group.lamp
+      - group.lamp_group
       - switch.circadian_lighting_circadian_lighting
       - switch.record_player
       - script.1546800827638
