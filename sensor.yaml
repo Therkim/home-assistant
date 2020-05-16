@@ -96,6 +96,16 @@
         value_template: "{{ states.sensor.unifi_gateway_wan.attributes['gw_system-stats']['cpu'] }}"
         unit_of_measurement: "%"
         entity_id: sensor.time
+      unifi_gateway_wan_cpu_temp:
+        friendly_name: 'USG CPU Temp'
+        value_template: {{ states.sensor.unifi_gateway_wan.attributes['gw_system-stats']['temps']['CPU'] }}
+        unit_of_measurement: "°C"
+        entity_id: sensor.time
+      unifi_gateway_wan_phy_temp:
+        friendly_name: 'USG PHY Temp'
+        value_template: {{ states.sensor.unifi_gateway_wan.attributes['gw_system-stats']['temps']['PHY'] }}
+        unit_of_measurement: "°C"
+        entity_id: sensor.time
       unifi_gateway_wan_mem:
         friendly_name: 'USG Memory'
         value_template: "{{ states.sensor.unifi_gateway_wan.attributes['gw_system-stats']['mem'] }}"
