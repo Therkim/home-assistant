@@ -16,6 +16,9 @@ office_ac_automation:
 living_room_ac_automation:
   name: Living Room AC Automation
   icon: mdi:air-conditioner
+bedroom_ac_automation:
+  name: Bedroom AC Automation
+  icon: mdi:air-conditioner
 office_window:
   name: Office Window
   icon: mdi:window-closed-variant
