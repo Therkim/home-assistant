@@ -3,3 +3,8 @@ lamp_group:
   entities:
     - switch.lamp_1
     - switch.lamp_2
+wled_group:
+  name: Meeting Light
+  entities:
+    - light.wled_living_room
+    - light.wled_office_door
