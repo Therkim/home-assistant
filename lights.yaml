@@ -1,0 +1,5 @@
+platform: group
+  name: Meeting Lights
+  entities:
+    - light.wled_living_room
+    - light.wled_office_door
