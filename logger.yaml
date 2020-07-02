@@ -1,6 +1,6 @@
 default: info
 logs:
-  huawei_lte: fatal
+  homeassistant.core.huawei_lte: fatal
 #  custom_components.hacs: debug
 #  hacs: debug
 #  queueman: debug
