@@ -5,6 +5,7 @@ turn_on_action:
   data:
     broadcast_address: !secret tv_broadcast
     mac: !secret tv_mac
+    broadcast_port: 8989
 customize:
   sources:
     - Netflix
