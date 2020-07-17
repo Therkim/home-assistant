@@ -25,7 +25,7 @@
       computer_switch:
         turn_on:
           service: script.turn_on
-          entity_id: script.595008198600
+          entity_id: script.1595008198600
         turn_off:
           service: switch.turn_off
           entity_id: switch.computer_wol
