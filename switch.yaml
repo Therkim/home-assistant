@@ -7,7 +7,7 @@
     min_brightness: 30
   - platform: wake_on_lan
     mac: !secret pc_mac
-    name: Computer
+    name: "Computer WoL"
     host: !secret pc_address
     broadcast_address: !secret pc_broadcast
     turn_off:
@@ -22,6 +22,13 @@
     host: !secret tv_address
   - platform: template
     switches:
+      computer_switch:
+        turn_on:
+          service: script.turn_on
+          entity_id: script.595008198600
+        turn_off:
+          service: switch.turn_off
+          entity_id: switch.computer_wol
       ps4_switch:
         turn_on:
           service: media_player.turn_on
