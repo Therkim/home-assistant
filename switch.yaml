@@ -29,6 +29,7 @@
         turn_off:
           service: switch.turn_off
           entity_id: switch.computer_wol
+        value_template: false
       ps4_switch:
         turn_on:
           service: media_player.turn_on
