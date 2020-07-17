@@ -10,16 +10,16 @@
     name: Computer
     host: !secret pc_address
     broadcast_address: !secret pc_broadcast
-  - platform: wake_on_lan
-    mac: !secret tv_mac
-    name: TV
-    broadcast_address: !secret tv_broadcast
-    host: !secret tv_address
     turn_off:
       service: mqtt.publish
       data:
         payload: ""
         topic: iotlink/workgroup/pandora/commands/hibernate
+  - platform: wake_on_lan
+    mac: !secret tv_mac
+    name: TV
+    broadcast_address: !secret tv_broadcast
+    host: !secret tv_address
   - platform: template
     switches:
       ps4_switch:
