@@ -5,6 +5,7 @@ smart_home:
 #  client_secret: !secret alexa_skill_client_secret
   filter:
     include_entities:
+      - switch.computer_switch
       - switch.ps4_switch
       - switch.aircon
       - switch.remote_aircon
