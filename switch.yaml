@@ -14,7 +14,7 @@
       service: mqtt.publish
       data:
         payload: ""
-        topic: iotlink/workgroup/pandora/commands/shutdown
+        topic: iotlink/workgroup/pandora/commands/hibernate
   - platform: wake_on_lan
     mac: !secret tv_mac
     name: TV
