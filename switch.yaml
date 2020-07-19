@@ -27,8 +27,8 @@
           service: script.turn_on
           entity_id: script.1595008198600
         turn_off:
-          service: switch.turn_off
-          entity_id: switch.computer_wol
+          service: script.turn_on
+          entity_id: script.1595116770437
         value_template: "{{ is_state('switch.computer_wol', 'on')}}"
       ps4_switch:
         turn_on:
