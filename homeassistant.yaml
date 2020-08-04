@@ -11,4 +11,6 @@
   time_zone: Europe/London
   # Customization file
   customize: !include customize.yaml
+  external_url: !secret external_url
+  internal_url: !secret internal_url
 
