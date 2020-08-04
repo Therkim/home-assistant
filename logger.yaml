@@ -1,4 +1,4 @@
-default: info
+default: debug
 logs:
   homeassistant.core.huawei_lte: fatal
 #  custom_components.hacs: debug
