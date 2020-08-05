@@ -348,3 +348,12 @@ switch.hoover:
   icon: mdi:robot-vacuum-variant
 switch.hoover_2:
   friendly_name: Hoover Dock
+switch.computer_switch:
+  icon: mdi:desktop-classic
+  name: Computer
+switch.record_player:
+  icon: mdi:record-player
+switch.tumble_dryer:
+  icon: mdi:tumble-dryer
+switch.foscam_living_room:
+  icon: mdi:camera
