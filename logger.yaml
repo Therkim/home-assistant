@@ -1,6 +1,9 @@
-default: debug
+default: info
 logs:
   homeassistant.core.huawei_lte: fatal
+  homeassistant.core.withings: debug
+  homeassistant.core.http: debug
+  homeassistant.core.webhook: debug
 #  custom_components.hacs: debug
 #  hacs: debug
 #  queueman: debug
